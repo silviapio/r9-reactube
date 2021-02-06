@@ -1,12 +1,18 @@
+import VideoItem from './VideoItem';
+
 function VideoList(props) {
+    const renderedVideos = props.videos.map(video => 
+        <VideoItem 
+            key={video.etag} 
+            title={video.snippet.title} 
+            snippet={video.snippet.thumbnails.default.url} 
+            onSelect={props.onSelect}
+        />);
+    
     return(
         <div>
             <p>Video List</p>
-            <p>{/*props.videos*/}</p>
-            {/*
-            use the map method to generate a list of <VideoItem /> components based on the array props.videos 
-            Pass as onClick the App method onSelect and use as parameter the key of <VideoItem />            
-            */}
+            {renderedVideos}
         </div>
     )
 };
