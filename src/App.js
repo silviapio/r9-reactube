@@ -10,7 +10,7 @@ import mockedData from './services/youtubeSearchResponse.json';
 function App() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
-  const [inputSearchBar, setInputSearchBar] = useState("React 17 tutorials");
+  const [inputSearchBar, setInputSearchBar] = useState();
 
   /*const handleSubmit = () => {
     const searchTerm = "react 17";
@@ -20,9 +20,11 @@ function App() {
   };*/
 
   //simulation of youtube api search response
-  const handleSearchSubmit = () => {
+  const handleSearchSubmit = event => {
+    event.preventDefault();
     const videoList = mockedData.items;
     setVideos(videoList);
+    console.log(videoList);
   };
 
   const handleSearchInputChange = event => setInputSearchBar(event.target.value);
@@ -33,7 +35,7 @@ function App() {
     <MyGrid fluid>
       <GlobalStyle />
         <MyRow>
-          <MyCol>
+          <MyCol xs={12}>
             <SearchBar inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
           </MyCol>
         </MyRow>
