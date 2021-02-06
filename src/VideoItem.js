@@ -1,9 +1,14 @@
+import { VideoItemContainer, VideoTitleContainer } from './VideoItem.styles';
+
 function VideoItem(props) {
     return(
-        <div>
+        <VideoItemContainer onClick={props.onSelect}>
+            
+            <img alt="video snippet" src={props.snippet} />
+            <VideoTitleContainer>
             <p>{props.title}</p>
-            <img src={props.snippet} />
-        </div>
+            </VideoTitleContainer>
+        </VideoItemContainer>
     );
 }
 

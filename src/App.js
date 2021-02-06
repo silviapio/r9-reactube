@@ -3,13 +3,13 @@ import { GlobalStyle, MyGrid, MyRow, MyCol } from './App.styles';
 import SearchBar from './SearchBar';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
-import { getSearchResult } from './services/youtube';
+//import { getSearchResult } from './services/youtube';
 //import json as simulation of search response
 import mockedData from './services/youtubeSearchResponse.json';
 
 function App() {
   const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+  const [selectedVideo, setSelectedVideo] = useState();
   const [inputSearchBar, setInputSearchBar] = useState();
 
   /*const handleSubmit = () => {
@@ -24,12 +24,16 @@ function App() {
     event.preventDefault();
     const videoList = mockedData.items;
     setVideos(videoList);
+    setSelectedVideo(videoList[0]);
     console.log(videoList);
   };
 
   const handleSearchInputChange = event => setInputSearchBar(event.target.value);
 
-  const handleVideoSelect = videoId => setSelectedVideo(videos.filter(video => video.etag === videoId)[0]);
+  const handleVideoSelect = videoId => {
+    console.log(videoId);
+    setSelectedVideo(videos.filter(video => video.etag === videoId)[0]);
+  }
   
   return(
     <MyGrid fluid>
@@ -41,7 +45,7 @@ function App() {
         </MyRow>
         <MyRow>
           <MyCol xs={12} lg={9}>
-            <VideoDetail video={selectedVideo} />
+            {selectedVideo && <VideoDetail video={selectedVideo} />}
           </MyCol>
           <MyCol xs={12} lg={3}>
             <VideoList videos={videos} onSelect={handleVideoSelect}/>
