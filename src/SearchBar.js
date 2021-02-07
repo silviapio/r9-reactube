@@ -1,8 +1,12 @@
+import { SearchBarText, InputContainer } from './SearchBar.styles';
+
 function SearchBar(props) {
     return(
     <form onSubmit={props.onSubmit}>
-    <p>Search for videos </p>
-    <input type="text" name="videoSearch" value={props.inputText} onChange={props.handleSearchInputChange} />
+    <SearchBarText>Video Search</SearchBarText>
+    <InputContainer>
+    <input type="text" name="videoSearch" placeholder="Type your search here" value={props.inputText} onChange={props.handleSearchInputChange} />
+    </InputContainer>
     </form>
     );
 };

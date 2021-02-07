@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const VideoItemContainer = styled.div`
-    border-bottom: 1px solid;
+    border-bottom: 2px solid #dfe0df;
     display: flex;
     align-items: center;
-    padding: 2px;
+    padding: 10px 4px;
+    :first-child {
+        padding-top: 0;
+    }
     :last-child {
         border-bottom: none;
     }
@@ -14,5 +17,5 @@ export const VideoItemContainer = styled.div`
 `;
 export const VideoTitleContainer = styled.div`
     padding: 2px 2px 2px 4px;
-    font-size: 1.5rem;
+    font-size: 0.8em;
 `;

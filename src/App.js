@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { GlobalStyle, MyGrid, MyRow, MyCol } from './App.styles';
+import { useEffect, useState } from 'react';
+import { GlobalStyle, MyGrid, MyRow, MyCol, ColSearchBox } from './App.styles';
 import SearchBar from './SearchBar';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
@@ -12,6 +12,12 @@ function App() {
   const [selectedVideo, setSelectedVideo] = useState();
   const [inputSearchBar, setInputSearchBar] = useState();
 
+  useEffect (() => {
+    const videoList = mockedData.items;
+    setVideos(videoList);
+    setSelectedVideo(videoList[0]);
+  },[])
+  
   /*const handleSubmit = () => {
     const searchTerm = "react 17";
     getSearchResult(searchTerm).then( response => {
@@ -39,9 +45,9 @@ function App() {
     <MyGrid fluid>
       <GlobalStyle />
         <MyRow>
-          <MyCol xs={12}>
+          <ColSearchBox xs={12}>
             <SearchBar inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
-          </MyCol>
+          </ColSearchBox>
         </MyRow>
         <MyRow>
           <MyCol xs={12} lg={8}>

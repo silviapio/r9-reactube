@@ -1,9 +1,9 @@
-import { SelectedVideoContainer, SelectedVideoTitle } from './VideoDetail.styles';
+import { SelectedVideoContainer, VideoDetailContainer, VideoTextContainer } from './VideoDetail.styles';
 
 function VideoDetail(props) {
 
     return(
-        <div>
+        <VideoDetailContainer>
             <SelectedVideoContainer>
             <iframe
                 title='Youtube player'
@@ -13,11 +13,12 @@ function VideoDetail(props) {
                 frameBorder="0"
                 allowFullScreen
                 />
-            {/*render here video, decide which props are needed*/}
             </SelectedVideoContainer>
-            <SelectedVideoTitle>{props.video.snippet.title}</SelectedVideoTitle>
+            <VideoTextContainer>
+            <h3>{props.video.snippet.title}</h3>
             <p>{props.video.snippet.description}</p>
-        </div>
+            </VideoTextContainer>
+        </VideoDetailContainer>
     )
 };
 
