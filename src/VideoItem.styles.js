@@ -14,5 +14,5 @@ export const VideoItemContainer = styled.div`
 `;
 export const VideoTitleContainer = styled.div`
     padding: 2px 2px 2px 4px;
-    font-size: 0.7rem;
+    font-size: 1.5rem;
 `;

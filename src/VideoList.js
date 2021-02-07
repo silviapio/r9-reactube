@@ -8,10 +8,10 @@ function VideoList(props) {
         <div>
             {props.videos.map(video =>
                 <VideoItem
-                    key={video.etag}
+                    key={video.id.videoId}
                     title={video.snippet.title}
-                    snippet={video.snippet.thumbnails.default.url}
-                    onSelect={handleSelect(video.etag)}
+                    snippet={video.snippet.thumbnails.medium.url}
+                    onSelect={handleSelect(video.id.videoId)}
                 />)
             }
         </div>

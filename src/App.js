@@ -30,9 +30,9 @@ function App() {
 
   const handleSearchInputChange = event => setInputSearchBar(event.target.value);
 
-  const handleVideoSelect = videoId => {
-    console.log(videoId);
-    setSelectedVideo(videos.filter(video => video.etag === videoId)[0]);
+  const handleVideoSelect = selectedVideoId => {
+    console.log(selectedVideoId);
+    setSelectedVideo(videos.filter(video => video.id.videoId === selectedVideoId)[0]);
   }
   
   return(
@@ -44,10 +44,10 @@ function App() {
           </MyCol>
         </MyRow>
         <MyRow>
-          <MyCol xs={12} lg={9}>
+          <MyCol xs={12} lg={8}>
             {selectedVideo && <VideoDetail video={selectedVideo} />}
           </MyCol>
-          <MyCol xs={12} lg={3}>
+          <MyCol xs={12} lg={4}>
             <VideoList videos={videos} onSelect={handleVideoSelect}/>
           </MyCol>
         </MyRow>
