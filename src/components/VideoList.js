@@ -1,10 +1,9 @@
 import VideoItem from './VideoItem';
 
 function VideoList(props) {
-
     const handleSelect = key => () => props.onSelect(key);
 
-      return (
+    return (
         <div>
             {props.videos.map(video =>
                 <VideoItem
@@ -15,7 +14,7 @@ function VideoList(props) {
                 />)
             }
         </div>
-    )
-};
+    );
+}
 
 export default VideoList;

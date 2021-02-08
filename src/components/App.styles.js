@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-
 export const GlobalStyle = createGlobalStyle`
     body, html {
         box-sizing: border-box;
