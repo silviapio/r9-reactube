@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const VideoDetailContainer = styled.div`
     padding-right: 20px;
+    @media (max-width: 1200px) {
+        padding-right: 0;
+    }
 `;
 
 export const SelectedVideoContainer = styled.div`

@@ -16,12 +16,17 @@ export const MyGrid = styled(Grid)`
     padding: 1px;
     margin: auto;
     min-height: 100vh;
-    max-width: 85vw;
+    max-width: 90vw;
     box-sizing: border-box;
 `;
 export const MyRow = styled(Row)`
     padding: 5px;
     margin: 0;
+    :first-child {
+        @media (max-width: 1200px) {
+            padding-right: 15px;
+        }    
+    }
 `;
 export const MyCol = styled(Col)`
     padding: 5px;

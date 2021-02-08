@@ -36,7 +36,8 @@ function App() {
         const videoList = response.data.items;
         setVideos(videoList);
         setSelectedVideo(videoList[0]);
-      });
+      }
+  );
 
   const handleSearchSubmit = event => {
     event.preventDefault();
@@ -45,7 +46,6 @@ function App() {
 
   const handleSearchInputChange = event => {
     setInputSearchBar(event.target.value);
-    
   }
 
   const handleVideoSelect = selectedVideoId => {
@@ -71,6 +71,6 @@ function App() {
         </MyRow>
     </MyGrid>
   );
-};
+}
 
 export default App;

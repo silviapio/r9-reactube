@@ -1,6 +1,6 @@
 import { SelectedVideoContainer, VideoDetailContainer, VideoTextContainer } from './VideoDetail.styles';
 
-const VideoDetail = props => (
+const VideoDetail = props =>
     <VideoDetailContainer>
         <SelectedVideoContainer>
             <iframe
@@ -17,6 +17,6 @@ const VideoDetail = props => (
             <p>{props.video.snippet.description}</p>
         </VideoTextContainer>
     </VideoDetailContainer>
-);
+;
 
 export default VideoDetail;
