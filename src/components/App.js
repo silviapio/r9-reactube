@@ -4,17 +4,12 @@ import SearchBar from './SearchBar';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
 import { getSearchResult } from '../services/youtube';
-
-//import mocked data for populating page on render and for simulation of youtube api search response:
 import mockedData from '../services/youtubeSearchResponse.json';
 
 function App() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState();
   const [inputSearchBar, setInputSearchBar] = useState("");
-  /*populateWithMockedData:
-  if set to TRUE, populates landing page with mocked data
-  if set to FALSE, populates landing page with real search results (keywords: "react 17 features")*/
   const [populateWithMockedData] = useState(true);
 
   /*useEffect:

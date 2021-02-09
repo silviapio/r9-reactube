@@ -1,10 +1,10 @@
 import { VideoItemContainer, VideoTitleContainer } from './VideoItem.styles';
 
-const VideoItem = props => (
-    <VideoItemContainer onClick={props.onSelect}>
-        <img alt="video snippet" src={props.snippet} />
+const VideoItem = ({ onSelect, snippet, title }) => (
+    <VideoItemContainer onClick={onSelect}>
+        <img alt="video snippet" src={snippet} />
         <VideoTitleContainer>
-            <p>{props.title}</p>
+            <p>{title}</p>
         </VideoTitleContainer>
     </VideoItemContainer>
 );
