@@ -3,10 +3,9 @@ import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles'
 
 function VideoList(props) {
     const handleSelect = key => () => props.onSelect(key);
-    console.log(props.videos);
 
     return (
-        <VideoListOuterContainer loading={props.loading}>
+        <VideoListOuterContainer $loading={props.loading}>
             <p>{props.header}</p>
         <VideoListContainer favorites={props.type === "favorites"}>
             {props.videos.map(video =>

@@ -19,7 +19,7 @@ const App = () =>
                     <Switch>
                         <Route path={"/"} exact component={Home}></Route>
                         {/*<Route path={"/:id"} children={<VideoDetailPage/>}> </Route>*/}
-                        <Route path={"/videoDetail"} component={VideoDetailPage}></Route>
+                        <Route path={"/videoDetail/:id"} component={VideoDetailPage}></Route>
                         <Route path={"/favorites"} component={Favorites}></Route>
                         <Route path={"/history"} component={SearchHistory}></Route>
                     </Switch>
