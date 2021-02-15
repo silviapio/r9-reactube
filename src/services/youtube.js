@@ -4,7 +4,7 @@ import { youtubeKey } from './privateKeys';
 export const getYoutubeResult = (searchText, mainVideoId) => {
     if (!searchText) {
         if (!mainVideoId) {
-            return apicall("recommended");
+            return apicall("videos");
         } else {
             return apicall("search", mainVideoId);
         }        
@@ -12,6 +12,8 @@ export const getYoutubeResult = (searchText, mainVideoId) => {
         return apicall("search", null, searchText);
     }
 }
+
+export const getSingleVideoInfo = videoId => apicall("videos", videoId);
 
 const apicall = (callType, videoId, text) => {
     if (callType === "search") {
@@ -30,18 +32,31 @@ const apicall = (callType, videoId, text) => {
                     "Accept": "application/json"
                 }
             });
-    } else if (callType === "recommended") {
-        return axios.get('https://www.googleapis.com/youtube/v3/videos', {
-            params: {
-                part: "snippet",
-                chart: "mostPopular",
-                regionCode: "ES",
-                key: youtubeKey,
-                videoEmbeddable: true
-            },
-            headers: {
-                "Accept": "application/json" 
-            }
-        });
+    } else if (callType === "videos") {
+        if (videoId) {
+            return axios.get('https://www.googleapis.com/youtube/v3/videos', {
+                params: {
+                    part: "snippet",
+                    key: youtubeKey,
+                    id: videoId
+                },
+                headers: {
+                    "Accept": "application/json" 
+                }
+            });
+        } else {
+            return axios.get('https://www.googleapis.com/youtube/v3/videos', {
+                params: {
+                    part: "snippet",
+                    chart: "mostPopular",
+                    regionCode: "ES",
+                    key: youtubeKey,
+                    videoEmbeddable: true
+                },
+                headers: {
+                    "Accept": "application/json" 
+                }
+            });
+        }    
     }
 };

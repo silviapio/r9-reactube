@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     body, html {
@@ -11,30 +10,4 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 1.3rem;
         color: #393e46;
     }
-`;
-export const MyGrid = styled(Grid)`
-    padding: 1px;
-    margin: auto;
-    min-height: 100vh;
-    max-width: 90vw;
-    box-sizing: border-box;
-`;
-export const MyRow = styled(Row)`
-    padding: 5px;
-    margin: 0;
-    :first-child {
-        @media (max-width: 1200px) {
-            padding-right: 15px;
-        }    
-    }
-`;
-export const MyCol = styled(Col)`
-    padding: 5px;
-    margin: 0;
-`;
-export const ColSearchBox = styled(Col)`
-    padding: 5px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: 2px solid #dfe0df;
 `;
