@@ -12,6 +12,10 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [userHasSearched, setUserHasSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchHistory, setSearchHistory] = useState(() => {
+    const localData = localStorage.getItem("saved searches");
+    return localData ? JSON.parse(localData) : [];
+  });
 
   //shows recommended videos on page upload:
   useEffect(() => updateVideoList(), []);
@@ -22,6 +26,8 @@ function App() {
       updateVideoList(inputSearchBar);
     }
   }, [isLoading, inputSearchBar]);
+
+  useEffect(() => {localStorage.setItem("savedSearches", JSON.stringify(searchHistory)); console.log(searchHistory)}, [searchHistory]);
 
   const updateVideoList = (searchText, mainVideoId) =>
     getYoutubeResult(searchText, mainVideoId)
@@ -45,6 +51,10 @@ function App() {
     event.preventDefault();
     setIsLoading(true);
     setUserHasSearched(true);
+    setSearchHistory([
+      ...searchHistory,
+      inputSearchBar
+    ]);
   }
 
   const handleSearchInputChange = event => {
@@ -72,7 +82,7 @@ function App() {
       </MyRow>
       <MyRow>
         <MyCol xs={12} xl={6}>
-          <SearchHistoryList />
+          <p>{/**/}</p>
         </MyCol>
         <MyCol xs={12} xl={6}>
           <VideoList type="favorites" videos={favorites} onSelect={handleVideoSelect} header="My favorite videos" />
