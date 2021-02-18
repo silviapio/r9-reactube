@@ -13,7 +13,7 @@ function App() {
   const [userHasSearched, setUserHasSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [searchHistory, setSearchHistory] = useState(() => {
-    const localData = localStorage.getItem("saved searches");
+    const localData = localStorage.getItem("savedSearches");
     return localData ? JSON.parse(localData) : [];
   });
 
