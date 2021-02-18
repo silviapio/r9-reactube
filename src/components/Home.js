@@ -9,9 +9,12 @@ import { getYoutubeResult } from '../services/youtube';
 function App() {
   const [videos, setVideos] = useState([]);
   const [inputSearchBar, setInputSearchBar] = useState("");
-  const [favorites, setFavorites] = useState([]);
   const [userHasSearched, setUserHasSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : []
+  });
   const [searchHistory, setSearchHistory] = useState(() => {
     const localData = localStorage.getItem("savedSearches");
     return localData ? JSON.parse(localData) : [];
@@ -82,7 +85,8 @@ function App() {
       video.isFavorite = true;
       otherVideos.push(video)
     }    
-    setFavorites(otherVideos);    
+    setFavorites(otherVideos);   
+    localStorage.setItem("favorites", JSON.stringify(otherVideos)); 
   }
 
 
@@ -110,7 +114,7 @@ function App() {
             !isLoading &&
               <div>
                 <p>My recent searches</p>
-                {searchHistory.map( string => <SearchHistoryItem searchText={string} /> )}
+                {searchHistory.map( (string, i) => <SearchHistoryItem key={i} searchText={string} /> )}
               </div>
           }
         </MyCol>
