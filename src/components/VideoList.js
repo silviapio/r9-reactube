@@ -8,11 +8,13 @@ function VideoList(props) {
         props.onFavToggle(video);
     };
 
+    const videosToDisplay = props.videos.filter(video => video.snippet).slice(0,5);
+
     return (
         <VideoListOuterContainer $loading={props.loading}>
             <p>{props.header}</p>
         <VideoListContainer favorites={props.type === "favorites"}>
-            {props.videos.map(video =>
+            {videosToDisplay.map(video =>
                 <VideoItem
                     key={video.id.videoId}
                     title={video.snippet.title}

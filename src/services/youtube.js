@@ -20,7 +20,7 @@ const apicall = (callType, videoId, text) => {
         return axios.get('https://www.googleapis.com/youtube/v3/search', {
                 params: {
                     part: "snippet",
-                    maxResults: 5,
+                    maxResults: 10,
                     type: "video",
                     relatedToVideoId: videoId,
                     q: text,
