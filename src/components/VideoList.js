@@ -3,6 +3,10 @@ import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles'
 
 function VideoList(props) {
     const handleSelect = key => () => props.onSelect(key);
+    const handleFavToggle = video => event => {
+        event.stopPropagation();
+        props.onFavToggle(video);
+    };
 
     return (
         <VideoListOuterContainer $loading={props.loading}>
@@ -14,6 +18,8 @@ function VideoList(props) {
                     title={video.snippet.title}
                     snippet={video.snippet.thumbnails.medium.url}
                     onSelect={handleSelect(video.id.videoId)}
+                    onFavToggle={handleFavToggle(video)}
+                    isFavorite={video.isFavorite}
                 />)
             }
         </VideoListContainer>

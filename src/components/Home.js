@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { MyGrid, MyRow, MyCol } from './Home.styles';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
-import SearchHistoryList from './SearchHistoryList';
+import SearchHistoryItem from './SearchHistoryItem';
 import { getYoutubeResult } from '../services/youtube';
 
 function App() {
@@ -20,6 +20,15 @@ function App() {
   //shows recommended videos on page upload:
   useEffect(() => updateVideoList(), []);
 
+  useEffect(() => {
+    videos.forEach(video => {
+      const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
+      video.isFavorite = filtered.length === 1;
+    });
+    setVideos([
+      ...videos
+    ]);
+  }, [favorites]);
 
   useEffect(() => {
     if (isLoading) {
@@ -27,7 +36,7 @@ function App() {
     }
   }, [isLoading, inputSearchBar]);
 
-  useEffect(() => {localStorage.setItem("savedSearches", JSON.stringify(searchHistory)); console.log(searchHistory)}, [searchHistory]);
+  useEffect(() => {localStorage.setItem("savedSearches", JSON.stringify(searchHistory))}, [searchHistory]);
 
   const updateVideoList = (searchText, mainVideoId) =>
     getYoutubeResult(searchText, mainVideoId)
@@ -64,9 +73,18 @@ function App() {
   const history = useHistory();
 
   const handleVideoSelect = myVideoId => {
-    console.log(myVideoId);
     history.push(`/videoDetail/${myVideoId}`);
   }
+
+  const handleFavToggle = video => {       
+    let otherVideos = favorites.filter( favoritesItem => favoritesItem.id.videoId !== video.id.videoId);
+    if (otherVideos.length === favorites.length) {
+      video.isFavorite = true;
+      otherVideos.push(video)
+    }    
+    setFavorites(otherVideos);    
+  }
+
 
   return (
     <MyGrid fluid>
@@ -77,15 +95,32 @@ function App() {
       </MyRow>
       <MyRow>
         <MyCol xs={12}>
-          <VideoList loading={isLoading} videos={videos} header={userHasSearched ? "Search Results" : "Recommended Videos"} onSelect={handleVideoSelect} />
+          <VideoList 
+            loading={isLoading} 
+            videos={videos} 
+            onFavToggle={handleFavToggle} 
+            onSelect={handleVideoSelect}
+            header={userHasSearched ? "Search Results" : "Recommended Videos"}  />
         </MyCol>
       </MyRow>
       <MyRow>
         <MyCol xs={12} xl={6}>
-          <p>{/**/}</p>
+          {searchHistory.length === 0 ?
+            <div><p>No recent searches found. Try with your first one!</p></div> :
+            !isLoading &&
+              <div>
+                <p>My recent searches</p>
+                {searchHistory.map( string => <SearchHistoryItem searchText={string} /> )}
+              </div>
+          }
         </MyCol>
         <MyCol xs={12} xl={6}>
-          <VideoList type="favorites" videos={favorites} onSelect={handleVideoSelect} header="My favorite videos" />
+          <VideoList 
+            type="favorites" 
+            videos={favorites} 
+            onSelect={handleVideoSelect} 
+            onFavToggle={handleFavToggle}
+            header="My favorite videos" />
         </MyCol>
       </MyRow>
     </MyGrid>
