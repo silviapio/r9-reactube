@@ -19,6 +19,7 @@ function App() {
     const localData = localStorage.getItem("savedSearches");
     return localData ? JSON.parse(localData) : [];
   });
+  const [isRepeatingSearch, setIsRepeatingSearch] = useState(false);
 
   //shows recommended videos on page upload:
   useEffect(() => updateVideoList(), []);
@@ -41,21 +42,29 @@ function App() {
 
   useEffect(() => {localStorage.setItem("savedSearches", JSON.stringify(searchHistory))}, [searchHistory]);
 
+  const repeatSearch = (searchString) => {
+    setInputSearchBar(searchString);
+    setIsRepeatingSearch(true);
+    setIsLoading(true);
+  }
+
   const updateVideoList = (searchText, mainVideoId) =>
     getYoutubeResult(searchText, mainVideoId)
       .then(response => {
         let videoList = [];
         if (userHasSearched) {
           videoList = response.data.items;
-          const newSearch = {
-            searchString: inputSearchBar,
-            timeStamp: Date.now(),
-            searchedVideos: videoList.slice(0,2),
-          }
-          const newSearchHistory = [...searchHistory];
-          newSearchHistory.unshift(newSearch);
-          console.log(newSearchHistory);
-          setSearchHistory(newSearchHistory);
+          if (!isRepeatingSearch){
+            const newSearch = {
+              searchString: inputSearchBar,
+              timeStamp: Date.now(),
+              searchedVideos: videoList.slice(0,2),
+            }
+            const newSearchHistory = [...searchHistory];
+            newSearchHistory.unshift(newSearch);
+            console.log(newSearchHistory);
+            setSearchHistory(newSearchHistory);
+          }          
         } else {
           videoList = response.data.items.map(videoItem => ({
             ...videoItem,
@@ -65,6 +74,7 @@ function App() {
         }
         setVideos(videoList);
         setIsLoading(false);
+        setIsRepeatingSearch(false);
       }
       );
 
@@ -125,6 +135,7 @@ function App() {
                     searchString={historyEntry.searchString}
                     videos={historyEntry.searchedVideos} 
                     timeStamp={historyEntry.timeStamp}
+                    onClick={repeatSearch}
                     /> )}
               </div>
           }
