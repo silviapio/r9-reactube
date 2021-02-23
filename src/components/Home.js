@@ -47,6 +47,15 @@ function App() {
         let videoList = [];
         if (userHasSearched) {
           videoList = response.data.items;
+          const newSearch = {
+            searchString: inputSearchBar,
+            timeStamp: Date.now(),
+            searchedVideos: videoList.slice(0,2),
+          }
+          const newSearchHistory = [...searchHistory];
+          newSearchHistory.unshift(newSearch);
+          console.log(newSearchHistory);
+          setSearchHistory(newSearchHistory);
         } else {
           videoList = response.data.items.map(videoItem => ({
             ...videoItem,
@@ -63,10 +72,6 @@ function App() {
     event.preventDefault();
     setIsLoading(true);
     setUserHasSearched(true);
-    setSearchHistory([
-      ...searchHistory,
-      inputSearchBar
-    ]);
   }
 
   const handleSearchInputChange = event => {
@@ -89,11 +94,11 @@ function App() {
     localStorage.setItem("favorites", JSON.stringify(otherVideos)); 
   }
 
-
   return (
     <MyGrid fluid>
       <MyRow>
         <MyCol xs={12}>
+          {/*reminder: disable searchbar when loading*/}
           <SearchBar inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
         </MyCol>
       </MyRow>
@@ -114,7 +119,13 @@ function App() {
             !isLoading &&
               <div>
                 <p>My recent searches</p>
-                {searchHistory.map( (string, i) => <SearchHistoryItem key={i} searchText={string} /> )}
+                {searchHistory.map( (historyEntry, i) => 
+                  <SearchHistoryItem 
+                    key={i} 
+                    searchString={historyEntry.searchString}
+                    videos={historyEntry.searchedVideos} 
+                    timeStamp={historyEntry.timeStamp}
+                    /> )}
               </div>
           }
         </MyCol>
