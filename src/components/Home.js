@@ -60,6 +60,7 @@ function App() {
               timeStamp: Date.now(),
               searchedVideos: videoList.slice(0,2),
             }
+            //reminder: slice array to limit search results
             const newSearchHistory = [...searchHistory];
             newSearchHistory.unshift(newSearch);
             console.log(newSearchHistory);
@@ -109,17 +110,19 @@ function App() {
       <MyRow>
         <MyCol xs={12}>
           {/*reminder: disable searchbar when loading*/}
-          <SearchBar inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
+          <SearchBar loading={isLoading} inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
         </MyCol>
       </MyRow>
       <MyRow>
         <MyCol xs={12}>
-          <VideoList 
+          {!isLoading && 
+            <VideoList 
             loading={isLoading} 
             videos={videos} 
             onFavToggle={handleFavToggle} 
             onSelect={handleVideoSelect}
             header={userHasSearched ? "Search Results" : "Recommended Videos"}  />
+          }
         </MyCol>
       </MyRow>
       <MyRow>

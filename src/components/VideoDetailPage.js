@@ -12,8 +12,14 @@ const VideoDetailPage = () => {
         const savedFavorites = localStorage.getItem("favorites");
         return savedFavorites ? JSON.parse(savedFavorites) : []
       });
+    const [recentlyViewed, setRecentlyViewed] = useState(() => {
+        const viewedVideos = localStorage.getItem("viewedVideos");
+        return viewedVideos ? JSON.parse(viewedVideos) : []
+    })
 
     const { id } = useParams();
+
+    useEffect(() => {localStorage.setItem("viewedVideos", JSON.stringify(recentlyViewed))}, [recentlyViewed]);
 
     useEffect(() => {
         getSingleVideoInfo(id)
@@ -22,6 +28,14 @@ const VideoDetailPage = () => {
             videoToDisplay.id = {videoId: videoToDisplay.id}; //solves youtube inconsistency in id object (single search response)
             videoToDisplay.isFavorite = isVideoFavorite(videoToDisplay.id.videoId);
             setMyVideo(videoToDisplay);
+            //reminder: slice array to limit storage
+            if (!wasVideoDisplayedAlready(videoToDisplay.id.videoId)) {
+                const updatedVideos = [
+                    ...recentlyViewed,
+                ]
+                updatedVideos.unshift(videoToDisplay);
+                setRecentlyViewed(updatedVideos);
+            }
         getYoutubeResult(null, videoToDisplay.id.videoId)
         .then((response) => {
             const videoList = response.data.items;
@@ -31,6 +45,11 @@ const VideoDetailPage = () => {
         });
         }); 
     }, [id]);
+
+    const wasVideoDisplayedAlready = myVideoId => {
+        let videoFound = recentlyViewed.filter(recentlyViewedItem => recentlyViewedItem.id.videoId === myVideoId);
+        return videoFound.length === 1;
+    }
 
     const isVideoFavorite = myVideoId => {
         let videoFound = favorites.filter(favoritesItem => favoritesItem.id.videoId === myVideoId);
@@ -65,7 +84,6 @@ const VideoDetailPage = () => {
             <div /> :
             <div>
             <MyRow>
-                <p>{myVideo.id.videoId}</p>
                 <VideoDetail video={myVideo} isFavorite={myVideo.isFavorite} onFavToggle={handleFavToggle} />
             </MyRow>
             <MyRow>
