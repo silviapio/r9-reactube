@@ -1,8 +1,7 @@
 import { SelectedVideoContainer, VideoDetailContainer, VideoTextContainer } from './VideoDetail.styles';
 import FavoriteToggler from './FavoriteToggler';
 
-const VideoDetail = ({ video, onFavToggle, isFavorite }) => {
-    /*const { video: { id: {videoId}, snippet: {title, description}} } = props; */
+const VideoDetail = ({ video, video: { id: {videoId}, snippet: {title, description}}, onFavToggle, isFavorite }) => {
     const handleFavToggle = video => () => onFavToggle(video);
 
     const maxDescriptionLength = 300;
@@ -11,7 +10,7 @@ const VideoDetail = ({ video, onFavToggle, isFavorite }) => {
         <SelectedVideoContainer>
             <iframe
                 title='Youtube player'
-                src={`https://youtube.com/embed/${video.id.videoId}`}
+                src={`https://youtube.com/embed/${videoId}`}
                 width="853"
                 height="480"
                 frameBorder="0"
@@ -20,10 +19,10 @@ const VideoDetail = ({ video, onFavToggle, isFavorite }) => {
         </SelectedVideoContainer>
         <FavoriteToggler onFavToggle={handleFavToggle(video)} isFavorite={isFavorite} className="favVideoItem" />
         <VideoTextContainer>
-            <h3>{video.snippet.title}</h3>
-            {video.snippet.description.length > maxDescriptionLength ?
-            <p>{`${video.snippet.description.substring(0, maxDescriptionLength)}...`}</p> : 
-            <p>{video.snippet.description}</p>
+            <h3>{title}</h3>
+            {description.length > maxDescriptionLength ?
+            <p>{`${description.substring(0, maxDescriptionLength)}...`}</p> : 
+            <p>{description}</p>
             }
             
         </VideoTextContainer>

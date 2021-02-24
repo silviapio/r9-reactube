@@ -1,19 +1,21 @@
 import VideoItem from './VideoItem';
 import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles';
 
-function VideoList(props) {
-    const handleSelect = key => () => props.onSelect(key);
+function VideoList({onSelect, onFavToggle, header, videos, loading, type}) {
+    const handleSelect = key => () => onSelect(key);
     const handleFavToggle = video => event => {
         event.stopPropagation();
-        props.onFavToggle(video);
+        onFavToggle(video);
     };
 
-    const videosToDisplay = props.videos.filter(video => video.snippet).slice(0,5);
+    const videosToDisplay = (header === "My last search results" || header === "My favorite videos") ? 
+    videos.filter(video => video.snippet).slice(0,10) : 
+    videos.filter(video => video.snippet).slice(0,5);
 
     return (
-        <VideoListOuterContainer $loading={props.loading}>
-            <p>{props.header}</p>
-        <VideoListContainer favorites={props.type === "favorites"}>
+        <VideoListOuterContainer $loading={loading}>
+            <p>{header}</p>
+        <VideoListContainer favorites={type === "favorites"}>
             {videosToDisplay.map(video =>
                 <VideoItem
                     key={video.id.videoId}

@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { useHistory} from 'react-router-dom';
 import VideoList from './VideoList';
+import syncWithLocalStorage from '../utils/localStorageUtils';
+import { updateFavorites } from '../utils/favoritesUtils';
 
 const Favorites = () => {
-    const [favorites, setFavorites] = useState(() => {
-        const savedFavorites = localStorage.getItem("favorites");
-        return savedFavorites ? JSON.parse(savedFavorites) : []
-    });
+    const [favorites, setFavorites] = useState(syncWithLocalStorage("favorites"));
 
     const history = useHistory();
+
     const handleVideoSelect = myVideoId => {
         history.push(`/videoDetail/${myVideoId}`);
       }
-
+    
     const handleFavRemoval = video => {       
-        let otherVideos = favorites.filter( favoritesItem => favoritesItem.id.videoId !== video.id.videoId);    
-        setFavorites(otherVideos);   
-        localStorage.setItem("favorites", JSON.stringify(otherVideos)); 
+        const newFavorites = updateFavorites(video, favorites);    
+        setFavorites(newFavorites);   
       }
     
     return (

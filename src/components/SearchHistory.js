@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import VideoList from './VideoList';
+import syncWithLocalStorage from '../utils/localStorageUtils';
+import { updateFavorites, isVideoFavorite } from '../utils/favoritesUtils';
 
 const SearchHistory = () => {
-
-    const [recentlyViewed, setRecentlyViewed] = useState(() => {
-        const viewedVideos = localStorage.getItem("viewedVideos");
-        return viewedVideos ? JSON.parse(viewedVideos) : []
-    })
-    const [favorites, setFavorites] = useState(() => {
-        const savedFavorites = localStorage.getItem("favorites");
-        return savedFavorites ? JSON.parse(savedFavorites) : []
-      });
+    const [recentlyViewed, setRecentlyViewed] = useState(syncWithLocalStorage("viewedVideos"));
+    const [favorites, setFavorites] = useState(syncWithLocalStorage("favorites"));
     const [lastSearchedVideos, setLastSearchedVideos] = useState(() => {
         const localData = localStorage.getItem("savedSearches");
         let videosToDisplay;
@@ -26,17 +21,15 @@ const SearchHistory = () => {
         console.log(videosToDisplay);
         return videosToDisplay;
     });
-
+    
     useEffect(() => {localStorage.setItem("viewedVideos", JSON.stringify(recentlyViewed))}, [recentlyViewed]);
     
     useEffect(() => {
         recentlyViewed.forEach(video => {
-          const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
-          video.isFavorite = filtered.length === 1;
+            video.isFavorite = isVideoFavorite(video, favorites);
         });
         lastSearchedVideos.forEach(video => {
-            const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
-            video.isFavorite = filtered.length === 1;
+            video.isFavorite = isVideoFavorite(video, favorites);
         });
         setRecentlyViewed([
           ...recentlyViewed
@@ -44,22 +37,18 @@ const SearchHistory = () => {
         setLastSearchedVideos([
             ...lastSearchedVideos
         ])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [favorites]);
 
     const history = useHistory();
-
+    
     const handleVideoSelect = myVideoId => {
         history.push(`/videoDetail/${myVideoId}`);
     }
-
+    
     const handleFavToggle = video => {       
-        let otherVideos = favorites.filter( favoritesItem => favoritesItem.id.videoId !== video.id.videoId);
-        if (otherVideos.length === favorites.length) {
-          video.isFavorite = true;
-          otherVideos.push(video)
-        }    
-        setFavorites(otherVideos);   
-        localStorage.setItem("favorites", JSON.stringify(otherVideos)); 
+        const newFavorites = updateFavorites(video, favorites);    
+        setFavorites(newFavorites);
       }
     
     return (
@@ -80,12 +69,11 @@ const SearchHistory = () => {
                         videos={lastSearchedVideos}
                         onSelect={handleVideoSelect}
                         onFavToggle={handleFavToggle}
-                        header="My last searches"
+                        header="My last search results"
                     />
                     }
                 </div>
             }
-
         </div>
     );
 }

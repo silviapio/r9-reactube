@@ -5,23 +5,19 @@ import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import SearchHistoryItem from './SearchHistoryItem';
 import { getYoutubeResult } from '../services/youtube';
+import syncWithLocalStorage from '../utils/localStorageUtils';
+import { updateFavorites } from '../utils/favoritesUtils';
 
 function App() {
   const [videos, setVideos] = useState([]);
   const [inputSearchBar, setInputSearchBar] = useState("");
   const [userHasSearched, setUserHasSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [favorites, setFavorites] = useState(() => {
-    const savedFavorites = localStorage.getItem("favorites");
-    return savedFavorites ? JSON.parse(savedFavorites) : []
-  });
-  const [searchHistory, setSearchHistory] = useState(() => {
-    const localData = localStorage.getItem("savedSearches");
-    return localData ? JSON.parse(localData) : [];
-  });
+  const [favorites, setFavorites] = useState(syncWithLocalStorage("favorites"));
+  const [searchHistory, setSearchHistory] = useState(syncWithLocalStorage("savedSearches"));
   const [isRepeatingSearch, setIsRepeatingSearch] = useState(false);
 
-  //shows recommended videos on page upload:
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => updateVideoList(), []);
 
   useEffect(() => {
@@ -32,15 +28,17 @@ function App() {
     setVideos([
       ...videos
     ]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favorites]);
 
   useEffect(() => {
     if (isLoading) {
       updateVideoList(inputSearchBar);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading, inputSearchBar]);
 
-  useEffect(() => {localStorage.setItem("savedSearches", JSON.stringify(searchHistory))}, [searchHistory]);
+  useEffect(() => localStorage.setItem("savedSearches", JSON.stringify(searchHistory)), [searchHistory]);
 
   const repeatSearch = (searchString) => {
     setInputSearchBar(searchString);
@@ -96,21 +94,20 @@ function App() {
   }
 
   const handleFavToggle = video => {       
-    let otherVideos = favorites.filter( favoritesItem => favoritesItem.id.videoId !== video.id.videoId);
-    if (otherVideos.length === favorites.length) {
-      video.isFavorite = true;
-      otherVideos.push(video)
-    }    
-    setFavorites(otherVideos);   
-    localStorage.setItem("favorites", JSON.stringify(otherVideos)); 
+    const newFavorites = updateFavorites(video, favorites);    
+    setFavorites(newFavorites);
   }
 
   return (
     <MyGrid fluid>
       <MyRow>
         <MyCol xs={12}>
-          {/*reminder: disable searchbar when loading*/}
-          <SearchBar loading={isLoading} inputText={inputSearchBar} onSubmit={handleSearchSubmit} onChange={handleSearchInputChange} />
+          <SearchBar 
+            loading={isLoading} 
+            inputText={inputSearchBar} 
+            onSubmit={handleSearchSubmit} 
+            onChange={handleSearchInputChange} 
+            />
         </MyCol>
       </MyRow>
       <MyRow>
