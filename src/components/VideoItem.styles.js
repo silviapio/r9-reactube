@@ -1,43 +1,65 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const desktopMedium = "@media (min-width: 1200px) and (max-width: 1500px)";
 
 export const VideoItemContainer = styled.div`
-    border-bottom: 2px solid #dfe0df;
-    display: flex;
-    align-items: center;
     padding: 10px 4px;
+    border-radius: 5px;
+    max-width: 16vw;
     img {
-        max-width: 60%;
-    }
-    :first-child {
-        padding-top: 0;
-    }
-    :last-child {
-        border-bottom: none;
+        width: 95%;
+        margin: auto;
     }
     :hover{
         cursor: pointer;
+        background-color: #D8E0DF;
+        opacity: 0.9;
+        font-weight: bolder;
     }
     ${desktopMedium} {
-        flex-direction: column-reverse;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items:center;
         img {
             max-width: 90%;
         }
     }
+    ${props => props.videoOnly && css`
+        max-width: 250px;
+        padding: 0 4px;
+    `}
 `;
+
+export const VideoOnlyContainer = styled.div`
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+        padding: 5px;
+    }
+    span {
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-90%, -90%);
+        -ms-transform: translate(-90%, -90%);
+        font-size: 0.9rem;
+        color: #D89fa4;
+    }
+`;
+
 export const VideoTitleContainer = styled.div`
-    padding: 2px 2px 2px 10px;
-    font-size: 0.7em;
+    padding: 2px;
+    font-size: 0.5em;
     p {
         margin: 0;
     }
     ${desktopMedium} {
-        padding: 2px 10px 10px 2px;
-        font-size: 0.8em;
+        padding: 5px;
+        font-size: 0.5em;
         p {
             margin: 0;
+            max-width: 15vw;
         }
     }
 `;

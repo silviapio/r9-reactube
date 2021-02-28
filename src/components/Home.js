@@ -24,11 +24,9 @@ function App() {
     videos.forEach(video => {
       const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
       video.isFavorite = filtered.length === 1;
-    });
-    setVideos([
-      ...videos
-    ]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    });    
+    setVideos([...videos]);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favorites]);
 
   useEffect(() => {
@@ -58,7 +56,7 @@ function App() {
               timeStamp: Date.now(),
               searchedVideos: videoList.slice(0,2),
             }
-            //reminder: slice array to limit search results
+            //future reminder: slice array to limit search results
             const newSearchHistory = [...searchHistory];
             newSearchHistory.unshift(newSearch);
             console.log(newSearchHistory);
@@ -71,6 +69,10 @@ function App() {
           })
           );
         }
+        videoList.forEach(video => {
+          const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
+          video.isFavorite = filtered.length === 1;
+        });
         setVideos(videoList);
         setIsLoading(false);
         setIsRepeatingSearch(false);
@@ -118,7 +120,8 @@ function App() {
             videos={videos} 
             onFavToggle={handleFavToggle} 
             onSelect={handleVideoSelect}
-            header={userHasSearched ? "Search Results" : "Recommended Videos"}  />
+            header={userHasSearched ? "Search Results" : "Recommended Videos"}
+            type="horizontal5"  />
           }
         </MyCol>
       </MyRow>
@@ -128,7 +131,7 @@ function App() {
             <div><p>No recent searches found. Try with your first one!</p></div> :
             !isLoading &&
               <div>
-                <p>My recent searches</p>
+                <h5>My recent searches</h5>
                 {searchHistory.map( (historyEntry, i) => 
                   <SearchHistoryItem 
                     key={i} 
@@ -142,7 +145,7 @@ function App() {
         </MyCol>
         <MyCol xs={12} xl={6}>
           <VideoList 
-            type="favorites" 
+            type="favoritesHome" 
             videos={favorites} 
             onSelect={handleVideoSelect} 
             onFavToggle={handleFavToggle}

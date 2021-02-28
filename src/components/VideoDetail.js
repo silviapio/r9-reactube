@@ -17,9 +17,10 @@ const VideoDetail = ({ video, video: { id: {videoId}, snippet: {title, descripti
                 allowFullScreen
             />
         </SelectedVideoContainer>
-        <FavoriteToggler onFavToggle={handleFavToggle(video)} isFavorite={isFavorite} className="favVideoItem" />
+        
         <VideoTextContainer>
-            <h3>{title}</h3>
+        <FavoriteToggler onFavToggle={handleFavToggle(video)} isFavorite={isFavorite} className="favVideoItem" />
+            <h5>{title}</h5>
             {description.length > maxDescriptionLength ?
             <p>{`${description.substring(0, maxDescriptionLength)}...`}</p> : 
             <p>{description}</p>

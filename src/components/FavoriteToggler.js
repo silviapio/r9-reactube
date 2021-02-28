@@ -1,11 +1,14 @@
 import { FavoriteButton } from './FavoriteToggler.styles';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
-//reminder: replace F with heart icon when adjusting styles
 const FavoriteToggler = ({onFavToggle, isFavorite}) => (
     <FavoriteButton 
     onClick={onFavToggle} 
     isfavorite={isFavorite}>
-        F 
+        {isFavorite ? 
+        <FaHeart/> :
+        <FaRegHeart/>
+        }
     </FavoriteButton>
 );
 

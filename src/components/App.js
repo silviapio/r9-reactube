@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Route, Switch } from'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from'react-router-dom';
 import Menu from './Menu';
 import Home from './Home';
 import Favorites from './Favorites';
 import SearchHistory from './SearchHistory';
 import VideoDetailPage from './VideoDetailPage';
-import { GlobalStyle } from './App.styles';
+import { GlobalStyle, SidebarContainer } from './App.styles';
 import { MyGrid, MyRow, MyCol } from './Home.styles';
+import { FaYoutube } from 'react-icons/fa'
 
 const App = () =>
     <Router>
@@ -13,7 +14,15 @@ const App = () =>
         <MyGrid fluid>
             <MyRow xs={12}>
                 <MyCol xs={12} lg={2}>
-                    <Menu />
+                    <SidebarContainer>
+                    <Link to='/'>
+                        <header>
+                            <FaYoutube /> 
+                            <h4>Reactube</h4>
+                        </header>
+                    </Link>
+                        <Menu />
+                    </SidebarContainer>
                 </MyCol>
                 <MyCol xs={12} lg={10}>
                     <Switch>

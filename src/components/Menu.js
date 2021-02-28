@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
+import { MenuDiv } from './Menu.styles';
+import { FaHome, FaHeart, FaClock } from 'react-icons/fa';
 
 const Menu = () => 
-    <div>
-        <p>MENU</p>
+    <MenuDiv>
         <ul>
-        <Link to='/'><li>Home</li></Link>
-        <Link to='/favorites'><li>Favorites</li></Link>
-        <Link to='/history'><li>History</li></Link>
+        <Link to='/'><li>
+            <div><FaHome style={{verticalAlign: 'baseline'}} /> <h5>Home</h5></div></li></Link>
+        <Link to='/favorites'><li>
+            <div><FaHeart /><h5>Favorites</h5></div></li></Link>
+        <Link to='/history'><li>
+            <div><FaClock /><h5>History</h5></div></li></Link>
         </ul>
-    </div>
+    </MenuDiv>
 ;
 
 export default Menu;

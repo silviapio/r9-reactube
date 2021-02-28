@@ -3,24 +3,25 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 export const MyGrid = styled(Grid)`
     padding: 1px;
-    border: 1px solid;
+    margin: auto;
+    border: none;
     min-height: 100vh;
-    max-width: 95vw;
+    max-width: 100vw;
     box-sizing: border-box;
 `;
 export const MyRow = styled(Row)`
     padding: 1px;
-    border: 1px solid;
+    border-bottom: 2px solid #dfe0df;
+    :first-child, :last-child {
+        border: none;
+    }
     margin: 0;
 `;
 export const MyCol = styled(Col)`
     padding: 1px;
     margin: 0;
-    border: 1px solid;
+    border: none;
+    h5 {
+        margin: 5px 5px 5px 10px;
+    }
 `;
-/*export const ColSearchBox = styled(Col)`
-    padding: 5px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: 2px solid #dfe0df;
-`;*/

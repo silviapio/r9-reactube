@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const HistoryItemContainer = styled.div`
     display: flex;
-    margin: 15px 0;
-    padding: 0 10px;
+    margin: 5px 0;
+    padding: 10px;
+    border-bottom: 2px solid #dfe0df;
+    :last-child {
+        border: none;
+    }
     img {
         max-height: 40px;
     }
@@ -16,6 +20,11 @@ export const HistoryItemContainer = styled.div`
     }
     button {
         margin-left: auto;
+        border-radius: 5px;
+        :hover {
+            cursor: pointer;
+            background-color: #D8E0DF;
+        }
     }
     
 `;
