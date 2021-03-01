@@ -13,18 +13,20 @@ const App = () =>
         <GlobalStyle />
         <MyGrid fluid>
             <MyRow xs={12}>
-                <MyCol xs={12} lg={2}>
+                <MyCol xs={12} sm={3} lg={2}>
                     <SidebarContainer>
                     <Link to='/'>
                         <header>
+                            <div>
                             <FaYoutube /> 
                             <h4>Reactube</h4>
+                            </div>
                         </header>
                     </Link>
                         <Menu />
                     </SidebarContainer>
                 </MyCol>
-                <MyCol xs={12} lg={10}>
+                <MyCol xs={12} sm={9} lg={10}>
                     <Switch>
                         <Route path={"/"} exact component={Home}></Route>
                         {/*<Route path={"/:id"} children={<VideoDetailPage/>}> </Route>*/}

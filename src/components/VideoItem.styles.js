@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import {mediumPhone} from '../utils/mediaQueries';
 
 const desktopMedium = "@media (min-width: 1200px) and (max-width: 1500px)";
 
@@ -21,6 +22,13 @@ export const VideoItemContainer = styled.div`
         align-items:center;
         img {
             max-width: 90%;
+        }
+    }
+    ${mediumPhone} {
+        display: flex;
+        max-width: 100%;
+        img {
+            max-width: 60%;
         }
     }
     ${props => props.videoOnly && css`

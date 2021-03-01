@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import {mediumPhone} from '../utils/mediaQueries';
 
 export const VideoListOuterContainer = styled.div`
     ${props => props.loading && 
@@ -16,6 +17,12 @@ export const VideoListOuterContainer = styled.div`
 export const VideoListContainer = styled.div`
     display: flex;
     flex-direction: row;
+    ${mediumPhone} {
+        flex-direction: column;
+        img {
+            max-width: 60%
+        }
+    }
     ${props => props.favorites &&
     css`
         flex-wrap: wrap;
@@ -31,6 +38,12 @@ export const VideoListContainer = styled.div`
             height: auto;
             max-height: 150px;
         }
+        ${mediumPhone} {
+            flex-direction: column;
+            img {
+                max-width: 60%
+            }
+        }
     `}
     ${props => props.lastSearchResults && css`
         flex-wrap: wrap;
@@ -39,6 +52,12 @@ export const VideoListContainer = styled.div`
             max-width: 15vw;
             height: auto
         }
+        ${mediumPhone} {
+            flex-direction: column;
+            img {
+                max-width: 60%
+            }
+        }
     `}
     ${props => props.favoritesPage && css`
         flex-wrap: wrap;
@@ -46,6 +65,12 @@ export const VideoListContainer = styled.div`
         img {
             max-width: 15vw;
             height: auto
+        }
+        ${mediumPhone} {
+            flex-direction: column;
+            img {
+                max-width: 60%
+            }
         }
     `}
 `;

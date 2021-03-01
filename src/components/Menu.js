@@ -6,7 +6,7 @@ const Menu = () =>
     <MenuDiv>
         <ul>
         <Link to='/'><li>
-            <div><FaHome style={{verticalAlign: 'baseline'}} /> <h5>Home</h5></div></li></Link>
+            <div><FaHome /> <h5>Home</h5></div></li></Link>
         <Link to='/favorites'><li>
             <div><FaHeart /><h5>Favorites</h5></div></li></Link>
         <Link to='/history'><li>

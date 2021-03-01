@@ -1,4 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { smallTablet } from '../utils/mediaQueries';
+import { mediumPhone } from '../utils/mediaQueries';
 
 export const GlobalStyle = createGlobalStyle`
     body, html {
@@ -28,10 +30,25 @@ export const SidebarContainer = styled.div`
         color: #686D76;
     }
     header {
-        display: flex;
-        align-items: center;
-        h4 {
-            margin: 0 0 0 4px;
+        div {
+            display: flex;
+            align-items: center;
+            h4 {
+                margin: 0 0 0 4px;
+            }
         }
+    }
+    ${smallTablet} {
+        header {
+            font-size: 1rem;
+        }
+        li {
+            font-size: 0.9rem;
+        }
+    }
+    ${mediumPhone} {
+        max-height: 80px;
+        padding: 0 0 0 15px;
+        border: none;
     }
 `;
