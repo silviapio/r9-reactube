@@ -1,7 +1,7 @@
 import VideoItem from './VideoItem';
 import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles';
 
-function VideoList({onSelect, onFavToggle, header, videos, loading, type, headerType}) {
+function VideoList({onSelect, onFavToggle, header, videos, loading, type, headerType, className}) {
     const handleSelect = key => () => {onSelect(key);
         console.log(key)}
     const handleFavToggle = video => event => {
@@ -26,6 +26,7 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
             }
         <VideoListContainer 
         favoritesHome={type === "favoritesHome"} 
+        className={className}
         horizontal5={type === "horizontal5"} 
         favoritesPage= {type === "favoritesPage"} 
         lastSearchResults={header === "My last search results"}>

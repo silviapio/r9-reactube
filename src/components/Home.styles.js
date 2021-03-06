@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { mediumPhone } from '../utils/mediaQueries';
 
 export const MyGrid = styled(Grid)`
     padding: 1px;
@@ -23,5 +24,12 @@ export const MyCol = styled(Col)`
     border: none;
     h5 {
         margin: 5px 5px 5px 10px;
+    }
+    &.sidebarCol {
+        border-right: 2px solid #dfe0df;
+        ${mediumPhone} {
+            border-bottom: 2px solid #dfe0df;
+            border-right: none;
+        }
     }
 `;

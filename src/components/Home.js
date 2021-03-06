@@ -121,7 +121,8 @@ function App() {
             onFavToggle={handleFavToggle} 
             onSelect={handleVideoSelect}
             header={userHasSearched ? "Search Results" : "Recommended Videos"}
-            type="horizontal5"  />
+            type="horizontal5"
+            className="horizontal5home"  />
           }
         </MyCol>
       </MyRow>

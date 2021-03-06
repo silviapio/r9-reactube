@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components';
-import {mediumPhone} from '../utils/mediaQueries';
+import styled from 'styled-components';
+import {mediumPhone, smallTablet} from '../utils/mediaQueries';
 
 const desktopMedium = "@media (min-width: 1200px) and (max-width: 1500px)";
 
@@ -15,7 +15,6 @@ export const VideoItemContainer = styled.div`
         cursor: pointer;
         background-color: #D8E0DF;
         opacity: 0.9;
-        font-weight: bolder;
     } 
     ${desktopMedium} {
         flex-direction: column;
@@ -23,6 +22,9 @@ export const VideoItemContainer = styled.div`
         img {
             max-width: 90%;
         }
+    }
+    ${smallTablet} {
+        max-width: 200px;
     }
     ${mediumPhone} {
         display: flex;

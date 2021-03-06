@@ -5,9 +5,6 @@ export const HistoryItemContainer = styled.div`
     margin: 5px 0;
     padding: 10px;
     border-bottom: 2px solid #dfe0df;
-    :last-child {
-        border: none;
-    }
     img {
         max-height: 40px;
     }

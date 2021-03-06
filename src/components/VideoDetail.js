@@ -6,7 +6,8 @@ const VideoDetail = ({ video, video: { id: {videoId}, snippet: {title, descripti
 
     const maxDescriptionLength = 300;
 
-    return (<VideoDetailContainer>
+    return (
+    <VideoDetailContainer>
         <SelectedVideoContainer>
             <iframe
                 title='Youtube player'
@@ -16,16 +17,14 @@ const VideoDetail = ({ video, video: { id: {videoId}, snippet: {title, descripti
                 frameBorder="0"
                 allowFullScreen
             />
-        </SelectedVideoContainer>
-        
+        </SelectedVideoContainer>        
         <VideoTextContainer>
         <FavoriteToggler onFavToggle={handleFavToggle(video)} isFavorite={isFavorite} className="favVideoItem" />
             <h5>{title}</h5>
             {description.length > maxDescriptionLength ?
             <p>{`${description.substring(0, maxDescriptionLength)}...`}</p> : 
             <p>{description}</p>
-            }
-            
+            }            
         </VideoTextContainer>
     </VideoDetailContainer>
 );

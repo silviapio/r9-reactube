@@ -13,7 +13,7 @@ const App = () =>
         <GlobalStyle />
         <MyGrid fluid>
             <MyRow xs={12}>
-                <MyCol xs={12} sm={3} lg={2}>
+                <MyCol xs={12} sm={3} lg={2} className="sidebarCol">
                     <SidebarContainer>
                     <Link to='/'>
                         <header>

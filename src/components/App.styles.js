@@ -25,7 +25,6 @@ export const SidebarContainer = styled.div`
     flex-direction: column;
     padding: 15px 0 0 15px;
     height: 100vh;
-    border-right: 2px solid #dfe0df;
     a:hover, a:active {
         color: #686D76;
     }

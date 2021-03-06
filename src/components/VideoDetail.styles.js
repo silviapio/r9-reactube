@@ -10,6 +10,7 @@ export const VideoDetailContainer = styled.div`
 export const SelectedVideoContainer = styled.div`
     position: relative;  
     padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
     iframe {
         position: absolute;
@@ -17,15 +18,9 @@ export const SelectedVideoContainer = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: 650px;
     }
-    @media (min-width: 1300px) {
-        max-height: 650px;
-        max-width: 1100px;
-        padding-bottom: 40%;
-        iframe {
-            max-height: 650px;
-        }
+    @media (min-width: 900px) {
+        max-width: 83vw;
     }
 `;
 
@@ -33,21 +28,21 @@ export const VideoTextContainer = styled.div`
     margin: 15px 0;
     border-radius: 5px;
     border: 2px solid #dfe0df;
-    @media (min-width: 1300px) {
-        max-width: 1100px;
+    @media (min-width: 900px) {
+        max-width: 83vw;
     }
     h5 {
         display: block;
         margin: 0;
-        padding: 10px;
-        font-size: 0.9em;
+        padding: 5px;
+        font-size: 0.9rem;
         font-weight: 400;
     }
     p {
         display: block;
         margin: 0;
-        padding: 5px 10px 25px 10px;
-        font-size: 0.8em;
+        padding: 2px 5px 5px 5px;
+        font-size: 0.7rem;
         font-weight: 300;
     }
 `;

@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import {mediumPhone} from '../utils/mediaQueries';
+import {mediumPhone, smallTablet} from '../utils/mediaQueries';
 
 export const VideoListOuterContainer = styled.div`
     ${props => props.loading && 
@@ -23,16 +23,7 @@ export const VideoListContainer = styled.div`
             max-width: 60%
         }
     }
-    ${props => props.favoritesHome &&
-    css`
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        img {
-            max-width: 240px;
-        }
-    `}
-    ${props => props.horizontal5 &&
-    css`
+    &.horizontal5home {
         img {
             max-width: 15vw;
             height: auto;
@@ -43,6 +34,21 @@ export const VideoListContainer = styled.div`
             img {
                 max-width: 60%
             }
+        }
+        ${smallTablet} {
+            flex-direction: row;
+            flex-wrap: wrap;
+            img {
+                max-width: 190px;
+            }
+        }
+    }
+    ${props => props.favoritesHome &&
+    css`
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        img {
+            max-width: 240px;
         }
     `}
     ${props => props.lastSearchResults && css`
