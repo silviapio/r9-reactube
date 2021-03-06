@@ -23,7 +23,7 @@ export const VideoListContainer = styled.div`
             max-width: 60%
         }
     }
-    ${props => props.favorites &&
+    ${props => props.favoritesHome &&
     css`
         flex-wrap: wrap;
         justify-content: flex-start;

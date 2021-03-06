@@ -16,7 +16,7 @@ export const VideoItemContainer = styled.div`
         background-color: #D8E0DF;
         opacity: 0.9;
         font-weight: bolder;
-    }
+    } 
     ${desktopMedium} {
         flex-direction: column;
         align-items:center;
@@ -31,10 +31,10 @@ export const VideoItemContainer = styled.div`
             max-width: 60%;
         }
     }
-    ${props => props.videoOnly && css`
+    &.videoOnly {
         max-width: 250px;
         padding: 0 4px;
-    `}
+    }
 `;
 
 export const VideoOnlyContainer = styled.div`

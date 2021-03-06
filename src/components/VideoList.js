@@ -25,7 +25,7 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
             <h5>{header}</h5>
             }
         <VideoListContainer 
-        favorites={type === "favoritesHome"} 
+        favoritesHome={type === "favoritesHome"} 
         horizontal5={type === "horizontal5"} 
         favoritesPage= {type === "favoritesPage"} 
         lastSearchResults={header === "My last search results"}>

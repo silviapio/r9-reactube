@@ -2,7 +2,7 @@ import { VideoItemContainer, VideoTitleContainer, VideoOnlyContainer } from './V
 import FavoriteToggler from './FavoriteToggler';
 
 const VideoItem = ({ onSelect, snippet, title, onFavToggle, isFavorite, videoOnly }) => (
-    <VideoItemContainer onClick={onSelect} videoOnly={videoOnly}>
+    <VideoItemContainer onClick={onSelect} className={videoOnly ? "videoOnly" : null}>
         
         {videoOnly &&
             <VideoOnlyContainer>
