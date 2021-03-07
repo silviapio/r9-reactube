@@ -1,18 +1,17 @@
-import styled, {css} from 'styled-components';
+import styled  from 'styled-components';
 import {mediumPhone, smallTablet} from '../utils/mediaQueries';
 
 export const VideoListOuterContainer = styled.div`
-    ${props => props.loading && 
-    css`
-        opacity: 0.2;
-    `}
     h4 {
         margin: 15px 5px 10px 5px;
     }
     h5 {
         margin: 5px 5px 5px 10px;
     }
-    border-bottom: ${props => props.type === "horizontal5" && "2px solid #dfe0df"};
+    opacity: ${props => props.loading && "0.2"};
+    &.recentlyViewedHistoryPage {
+        border-bottom: 2px solid #dfe0df;
+    } 
 `;
 export const VideoListContainer = styled.div`
     display: flex;
@@ -63,13 +62,18 @@ export const VideoListContainer = styled.div`
                 max-width: 60%
             }
         }
+        ${smallTablet} {
+            img {
+                max-width: 190px;
+            }
+        }
     }
-    ${props => props.lastSearchResults && css`
+    &.lastSearchesHistoryPage, &.recentlyViewedHistoryPage {
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         img {
-            max-width: 15vw;
-            height: auto
+            max-width: 14vw;
+            max-height: 150px;
         }
         ${mediumPhone} {
             flex-direction: column;
@@ -77,5 +81,10 @@ export const VideoListContainer = styled.div`
                 max-width: 60%
             }
         }
-    `}
+        ${smallTablet} {
+            img {
+                max-width: 190px;
+            }
+        }
+    }
 `;

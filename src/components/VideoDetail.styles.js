@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { desktop } from '../utils/mediaQueries';
 
 export const VideoDetailContainer = styled.div`
-    padding-right: 20px;
-    @media (max-width: 1200px) {
-        padding-right: 0;
+    padding-right: 0;
+    ${desktop} {
+        padding-right: 20px;
     }
 `;
 
@@ -19,7 +20,7 @@ export const SelectedVideoContainer = styled.div`
         width: 100%;
         height: 100%;
     }
-    @media (min-width: 900px) {
+    ${desktop} {
         max-width: 83vw;
     }
 `;
@@ -28,7 +29,7 @@ export const VideoTextContainer = styled.div`
     margin: 15px 0;
     border-radius: 5px;
     border: 2px solid #dfe0df;
-    @media (min-width: 900px) {
+    ${desktop} {
         max-width: 83vw;
     }
     h5 {

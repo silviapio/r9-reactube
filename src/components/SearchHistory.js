@@ -63,6 +63,8 @@ const SearchHistory = () => {
                         onFavToggle={handleFavToggle}
                         header="My recently viewed videos"
                         headerStyle="topHeader"
+                        className="recentlyViewedHistoryPage"
+                        type="horizontal5"
                     />
                     }
                     {lastSearchedVideos.length !== 0 &&
@@ -71,7 +73,9 @@ const SearchHistory = () => {
                         onSelect={handleVideoSelect}
                         onFavToggle={handleFavToggle}
                         header="My last search results"
-                        type="lastSearchedVideos"
+                        headerStyle="lastSearchesHistoryPage"
+                        className="lastSearchesHistoryPage"
+                        type="lastSearchesHistoryPage"
                     />
                     }
                 </div>

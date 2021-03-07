@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import {mediumPhone, smallTablet} from '../utils/mediaQueries';
-
-const desktopMedium = "@media (min-width: 1200px) and (max-width: 1500px)";
+import {mediumPhone, smallTablet, mediumDesktop} from '../utils/mediaQueries';
 
 export const VideoItemContainer = styled.div`
     padding: 10px 4px;
@@ -16,7 +14,7 @@ export const VideoItemContainer = styled.div`
         background-color: #D8E0DF;
         opacity: 0.9;
     } 
-    ${desktopMedium} {
+    ${mediumDesktop} {
         flex-direction: column;
         align-items:center;
         img {
@@ -64,7 +62,7 @@ export const VideoTitleContainer = styled.div`
     p {
         margin: 0;
     }
-    ${desktopMedium} {
+    ${mediumDesktop} {
         padding: 5px;
         font-size: 0.5em;
         p {

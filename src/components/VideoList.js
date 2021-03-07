@@ -10,7 +10,7 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
     };
 
     let videosToDisplay;
-    if ((header === "My last search results" || type === "favoritesHome" ) ){ 
+    if ((type === "lastSearchesHistoryPage" || type === "favoritesHome" ) ){ 
         videosToDisplay = videos.filter(video => video.snippet).slice(0,10) }
         else if  (type === "favoritesPage"){
             videosToDisplay = videos.filter(video => video.snippet);
@@ -19,14 +19,11 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
         }
 
     return (
-        <VideoListOuterContainer $loading={loading}>
-            { (headerStyle === "topHeader" || header === "My last search results") ? <h4>{header}</h4> :
+        <VideoListOuterContainer $loading={loading} className={className}>
+            { (headerStyle === "topHeader" || headerStyle === "lastSearchesHistoryPage") ? <h4>{header}</h4> :
             <h5>{header}</h5>
             }
-        <VideoListContainer 
-        className={className}
-        type={type} 
-        lastSearchResults={header === "My last search results"}>
+        <VideoListContainer className={className} type={type}>
             {videosToDisplay.map(video =>
                 <VideoItem
                     key={video.id.videoId}
