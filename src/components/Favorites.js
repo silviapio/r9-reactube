@@ -19,17 +19,15 @@ const Favorites = () => {
       }
     
     return (
-        <div>
-            <VideoList
-            videos={favorites} 
-            onSelect={handleVideoSelect} 
-            onFavToggle={handleFavRemoval}
-            header="All my favorite videos"
-            headerStyle="topHeader"
-            type="favoritesPage"
-            className="favoritesPage" />
-        </div>
-    );
+      <VideoList
+        videos={favorites} 
+        onSelect={handleVideoSelect} 
+        onFavToggle={handleFavRemoval}
+        header="All my favorite videos"
+        headerStyle="topHeader"
+        type="favoritesPage"
+        className="favoritesPage" 
+      />);
 }
 
 export default Favorites;

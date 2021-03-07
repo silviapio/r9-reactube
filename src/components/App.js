@@ -38,6 +38,6 @@ const App = () =>
             </MyRow>
         </MyGrid>
     </Router>
-    ;
+;
 
 export default App;

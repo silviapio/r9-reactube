@@ -13,6 +13,7 @@ export const VideoListOuterContainer = styled.div`
         border-bottom: 2px solid #dfe0df;
     } 
 `;
+
 export const VideoListContainer = styled.div`
     display: flex;
     flex-direction: row;

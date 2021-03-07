@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {mediumPhone} from '../utils/mediaQueries';
+import { mediumPhone } from '../utils/mediaQueries';
 
 export const MenuDiv = styled.div`
     margin-top: 0.9rem;
