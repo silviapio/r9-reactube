@@ -12,7 +12,7 @@ export const VideoListOuterContainer = styled.div`
     h5 {
         margin: 5px 5px 5px 10px;
     }
-    border-bottom: ${props => (props.type === "horizontal5" || props.type === "favoritesPage") && "2px solid #dfe0df"};
+    border-bottom: ${props => props.type === "horizontal5" && "2px solid #dfe0df"};
 `;
 export const VideoListContainer = styled.div`
     display: flex;
@@ -51,9 +51,9 @@ export const VideoListContainer = styled.div`
             max-width: 240px;
         }
     `}
-    ${props => props.lastSearchResults && css`
+    &.favoritesPage {
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
         img {
             max-width: 15vw;
             height: auto
@@ -64,10 +64,10 @@ export const VideoListContainer = styled.div`
                 max-width: 60%
             }
         }
-    `}
-    ${props => props.favoritesPage && css`
+    }
+    ${props => props.lastSearchResults && css`
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
         img {
             max-width: 15vw;
             height: auto

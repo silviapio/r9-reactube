@@ -25,8 +25,9 @@ const Favorites = () => {
             onSelect={handleVideoSelect} 
             onFavToggle={handleFavRemoval}
             header="All my favorite videos"
-            headerType="topElement"
-            type="favoritesPage" />
+            headerStyle="topHeader"
+            type="favoritesPage"
+            className="favoritesPage" />
         </div>
     );
 }

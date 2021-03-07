@@ -1,7 +1,7 @@
 import VideoItem from './VideoItem';
 import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles';
 
-function VideoList({onSelect, onFavToggle, header, videos, loading, type, headerType, className}) {
+function VideoList({onSelect, onFavToggle, header, videos, loading, type, headerStyle, className}) {
     const handleSelect = key => () => {onSelect(key);
         console.log(key)}
     const handleFavToggle = video => event => {
@@ -12,7 +12,7 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
     let videosToDisplay;
     if ((header === "My last search results" || type === "favoritesHome" ) ){ 
         videosToDisplay = videos.filter(video => video.snippet).slice(0,10) }
-        else if  (header === "All my favorite videos"){
+        else if  (type === "favoritesPage"){
             videosToDisplay = videos.filter(video => video.snippet);
         }else{
             videosToDisplay = videos.filter(video => video.snippet).slice(0,5);
@@ -20,15 +20,14 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
 
     return (
         <VideoListOuterContainer $loading={loading}>
-            {(headerType === "topElement" || header === "My last search results") ? 
-            <h4>{header}</h4> :
+            { headerStyle === "topHeader" && <h4>{header}</h4> }
+            {header === "My last search results" &&
             <h5>{header}</h5>
             }
         <VideoListContainer 
         favoritesHome={type === "favoritesHome"} 
         className={className}
         horizontal5={type === "horizontal5"} 
-        favoritesPage= {type === "favoritesPage"} 
         lastSearchResults={header === "My last search results"}>
             {videosToDisplay.map(video =>
                 <VideoItem
