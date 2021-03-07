@@ -146,11 +146,12 @@ function App() {
         </MyCol>
         <MyCol xs={12} xl={6}>
           <VideoList 
-            type="favoritesHome" 
             videos={favorites} 
             onSelect={handleVideoSelect} 
             onFavToggle={handleFavToggle}
-            header="My favorite videos" />
+            header="My favorite videos"
+            type="favoritesHome" 
+            className="favoritesHome" />
         </MyCol>
       </MyRow>
     </MyGrid>

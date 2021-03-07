@@ -43,14 +43,13 @@ export const VideoListContainer = styled.div`
             }
         }
     }
-    ${props => props.favoritesHome &&
-    css`
+    &.favoritesHome {
         flex-wrap: wrap;
         justify-content: flex-start;
         img {
             max-width: 240px;
         }
-    `}
+    }
     &.favoritesPage {
         flex-wrap: wrap;
         justify-content: flex-start;

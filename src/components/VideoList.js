@@ -20,14 +20,12 @@ function VideoList({onSelect, onFavToggle, header, videos, loading, type, header
 
     return (
         <VideoListOuterContainer $loading={loading}>
-            { headerStyle === "topHeader" && <h4>{header}</h4> }
-            {header === "My last search results" &&
+            { (headerStyle === "topHeader" || header === "My last search results") ? <h4>{header}</h4> :
             <h5>{header}</h5>
             }
         <VideoListContainer 
-        favoritesHome={type === "favoritesHome"} 
         className={className}
-        horizontal5={type === "horizontal5"} 
+        type={type} 
         lastSearchResults={header === "My last search results"}>
             {videosToDisplay.map(video =>
                 <VideoItem
