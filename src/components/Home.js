@@ -59,7 +59,6 @@ function App() {
             //future reminder: slice array to limit search results
             const newSearchHistory = [...searchHistory];
             newSearchHistory.unshift(newSearch);
-            console.log(newSearchHistory);
             setSearchHistory(newSearchHistory);
           }          
         } else {

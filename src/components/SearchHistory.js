@@ -18,7 +18,6 @@ const SearchHistory = () => {
         } else {
             videosToDisplay = [];
         }
-        console.log(videosToDisplay);
         return videosToDisplay;
     });
     

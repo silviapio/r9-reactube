@@ -47,13 +47,11 @@ const VideoDetailPage = () => {
     }
 
     const handleVideoSelection = myVideoId => {
-        console.log(myVideoId);
         setMyVideo(videos.filter(video => video.id.videoId === myVideoId)[0]);
         getYoutubeResult(null, myVideoId)
         .then((response) =>{
             const videoList = response.data.items;
             setVideos(videoList);
-            console.log(response);
         });
     };
 

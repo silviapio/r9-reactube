@@ -4,7 +4,6 @@ import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles'
 function VideoList({ onSelect, onFavToggle, header, videos, loading, type, headerStyle, className }) {
     const handleSelect = key => () => {
         onSelect(key);
-        console.log(key)
     }
     const handleFavToggle = video => event => {
         event.stopPropagation();
