@@ -6,9 +6,9 @@ import VideoList from './VideoList';
 import SearchHistoryItem from './SearchHistoryItem';
 import { getYoutubeResult } from '../services/youtube';
 import syncWithLocalStorage from '../utils/localStorageUtils';
-import { updateFavorites } from '../utils/favoritesUtils';
+import { updateFavorites, isVideoFavorite } from '../utils/favoritesUtils';
 
-function App() {
+const Home = () => {
   const [videos, setVideos] = useState([]);
   const [inputSearchBar, setInputSearchBar] = useState("");
   const [userHasSearched, setUserHasSearched] = useState(false);
@@ -21,24 +21,28 @@ function App() {
   useEffect(() => updateVideoList(), []);
 
   useEffect(() => {
-    videos.forEach(video => {
-      const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
-      video.isFavorite = filtered.length === 1;
-    });    
-    setVideos([...videos]);
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    const newVideos = videos.map(video => {
+      return {
+        ...video,
+        isFavorite: isVideoFavorite(video, favorites)
+      }
+    });
+    setVideos(newVideos);
+    console.log("added favorite property to videos OK");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favorites]);
 
   useEffect(() => {
     if (isLoading) {
       updateVideoList(inputSearchBar);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading, inputSearchBar]);
 
   useEffect(() => localStorage.setItem("savedSearches", JSON.stringify(searchHistory)), [searchHistory]);
 
   const repeatSearch = (searchString) => {
+    setUserHasSearched(true);
     setInputSearchBar(searchString);
     setIsRepeatingSearch(true);
     setIsLoading(true);
@@ -50,17 +54,19 @@ function App() {
         let videoList = [];
         if (userHasSearched) {
           videoList = response.data.items;
-          if (!isRepeatingSearch){
+          console.log("response");
+          console.log(response.data.items)
+          if (!isRepeatingSearch) {
             const newSearch = {
               searchString: inputSearchBar,
               timeStamp: Date.now(),
-              searchedVideos: videoList.slice(0,2),
+              searchedVideos: videoList.slice(0, 2),
             }
             //future reminder: slice array to limit search results
             const newSearchHistory = [...searchHistory];
             newSearchHistory.unshift(newSearch);
             setSearchHistory(newSearchHistory);
-          }          
+          }
         } else {
           videoList = response.data.items.map(videoItem => ({
             ...videoItem,
@@ -68,11 +74,13 @@ function App() {
           })
           );
         }
-        videoList.forEach(video => {
-          const filtered = favorites.filter(favoritesItem => favoritesItem.id.videoId === video.id.videoId);
-          video.isFavorite = filtered.length === 1;
+        const videoListWithFavorites = videoList.map(video => {
+          return {
+            ...video,
+            isFavorite: isVideoFavorite(video, favorites)
+          }
         });
-        setVideos(videoList);
+        setVideos(videoListWithFavorites);
         setIsLoading(false);
         setIsRepeatingSearch(false);
       }
@@ -82,46 +90,46 @@ function App() {
     event.preventDefault();
     setIsLoading(true);
     setUserHasSearched(true);
-  }
+  };
 
   const handleSearchInputChange = event => {
     setInputSearchBar(event.target.value);
-  }
+  };
 
   const history = useHistory();
 
   const handleVideoSelect = myVideoId => {
     history.push(`/videoDetail/${myVideoId}`);
-  }
+  };
 
-  const handleFavToggle = video => {       
-    const newFavorites = updateFavorites(video, favorites);    
+  const handleFavToggle = video => {
+    const newFavorites = updateFavorites(video, favorites);
     setFavorites(newFavorites);
-  }
+  };
 
   return (
     <MyGrid fluid>
       <MyRow>
         <MyCol xs={12}>
-          <SearchBar 
-            loading={isLoading} 
-            inputText={inputSearchBar} 
-            onSubmit={handleSearchSubmit} 
-            onChange={handleSearchInputChange} 
-            />
+          <SearchBar
+            loading={isLoading}
+            inputText={inputSearchBar}
+            onSubmit={handleSearchSubmit}
+            onChange={handleSearchInputChange}
+          />
         </MyCol>
       </MyRow>
       <MyRow>
         <MyCol xs={12}>
-          {!isLoading && 
-            <VideoList 
-            loading={isLoading} 
-            videos={videos} 
-            onFavToggle={handleFavToggle} 
-            onSelect={handleVideoSelect}
-            header={userHasSearched ? "Search Results" : "Recommended Videos"}
-            type="horizontal5"
-            className="horizontal5home"  />
+          {!isLoading &&
+            <VideoList
+              loading={isLoading}
+              videos={videos}
+              onFavToggle={handleFavToggle}
+              onSelect={handleVideoSelect}
+              header={userHasSearched ? "Search Results" : "Recommended Videos"}
+              type="horizontal5"
+              className="horizontal5home" />
           }
         </MyCol>
       </MyRow>
@@ -130,26 +138,26 @@ function App() {
           {searchHistory.length === 0 ?
             <div><p>No recent searches found. Try with your first one!</p></div> :
             !isLoading &&
-              <div>
-                <h5>My recent searches</h5>
-                {searchHistory.map( (historyEntry, i) => 
-                  <SearchHistoryItem 
-                    key={i} 
-                    searchString={historyEntry.searchString}
-                    videos={historyEntry.searchedVideos} 
-                    timeStamp={historyEntry.timeStamp}
-                    onClick={repeatSearch}
-                    /> )}
-              </div>
+            <div>
+              <h5>My recent searches</h5>
+              {searchHistory.map((historyEntry, i) =>
+                <SearchHistoryItem
+                  key={i}
+                  searchString={historyEntry.searchString}
+                  videos={historyEntry.searchedVideos}
+                  timeStamp={historyEntry.timeStamp}
+                  onClick={repeatSearch}
+                />)}
+            </div>
           }
         </MyCol>
         <MyCol xs={12} xl={6}>
-          <VideoList 
-            videos={favorites} 
-            onSelect={handleVideoSelect} 
+          <VideoList
+            videos={favorites}
+            onSelect={handleVideoSelect}
             onFavToggle={handleFavToggle}
             header="My favorite videos"
-            type="favoritesHome" 
+            type="favoritesHome"
             className="favoritesHome" />
         </MyCol>
       </MyRow>
@@ -157,4 +165,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

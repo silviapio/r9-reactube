@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { smallTablet } from '../utils/mediaQueries';
-import { mediumPhone } from '../utils/mediaQueries';
+import { smallTablet, mediumPhone } from '../utils/mediaQueries';
 
 export const GlobalStyle = createGlobalStyle`
     body, html {
@@ -17,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     a, a:visited {
         color: inherit;
-      }
+    }
 `;
 
 export const SidebarContainer = styled.div`
@@ -33,7 +32,7 @@ export const SidebarContainer = styled.div`
             display: flex;
             align-items: center;
             h4 {
-                margin: 0 0 0 4px;
+                margin-left: 4px;
             }
         }
     }
