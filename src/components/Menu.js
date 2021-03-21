@@ -2,18 +2,18 @@ import { Link } from 'react-router-dom';
 import { MenuDiv } from './Menu.styles';
 import { FaHome, FaHeart, FaClock } from 'react-icons/fa';
 
-const Menu = () => 
+const Menu = () =>
     <MenuDiv>
         <ul>
-            <Link to='/'>
+            <Link to="/">
                 <li>
                     <div>
-                        <FaHome /> 
+                        <FaHome />
                         <h5>Home</h5>
                     </div>
                 </li>
             </Link>
-            <Link to='/favorites'>
+            <Link to="/favorites">
                 <li>
                     <div>
                         <FaHeart />
@@ -21,7 +21,7 @@ const Menu = () =>
                     </div>
                 </li>
             </Link>
-            <Link to='/history'>
+            <Link to="/history">
                 <li>
                     <div>
                         <FaClock />
@@ -31,6 +31,6 @@ const Menu = () =>
             </Link>
         </ul>
     </MenuDiv>
-;
+    ;
 
 export default Menu;

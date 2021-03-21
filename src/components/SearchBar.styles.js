@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const InputContainer = styled.div`
     max-width: 650px;
     display: flex;

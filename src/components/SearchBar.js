@@ -1,6 +1,6 @@
 import { InputContainer } from './SearchBar.styles';
 
-const SearchBar = ({onSubmit, inputText, onChange, loading}) =>
+const SearchBar = ({ onSubmit, inputText, onChange, loading }) =>
     <form onSubmit={onSubmit}>
         <InputContainer>
             <input
@@ -9,7 +9,8 @@ const SearchBar = ({onSubmit, inputText, onChange, loading}) =>
                 placeholder="Search..."
                 value={inputText}
                 onChange={onChange}
-                disabled={loading} />
+                disabled={loading}
+            />
         </InputContainer>
     </form>;
 

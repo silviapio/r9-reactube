@@ -9,73 +9,73 @@ const SearchHistory = () => {
     const [favorites, setFavorites] = useState(syncWithLocalStorage("favorites"));
     const [lastSearchedVideos, setLastSearchedVideos] = useState(() => {
         const localData = localStorage.getItem("savedSearches");
-        let videosToDisplay;
-        if (localData) {
-            videosToDisplay = 
-                JSON.parse(localData)
-                .map(searchItem => searchItem.searchedVideos)
-                .flat();
-        } else {
-            videosToDisplay = [];
-        }
+        const videosToDisplay = localData
+            ? JSON.parse(localData).map(searchItem => searchItem.searchedVideos).flat()
+            : [];
         return videosToDisplay;
     });
-    
-    useEffect(() => {localStorage.setItem("viewedVideos", JSON.stringify(recentlyViewed))}, [recentlyViewed]);
-    
+
+    useEffect(() => { localStorage.setItem("viewedVideos", JSON.stringify(recentlyViewed)) }, [recentlyViewed]);
+
     useEffect(() => {
-        recentlyViewed.forEach(video => {
-            video.isFavorite = isVideoFavorite(video, favorites);
-        });
-        lastSearchedVideos.forEach(video => {
-            video.isFavorite = isVideoFavorite(video, favorites);
-        });
-        setRecentlyViewed([
-          ...recentlyViewed
-        ]);
-        setLastSearchedVideos([
-            ...lastSearchedVideos
-        ])
+        const recentlyViewedWithFavorites = recentlyViewed.map(
+            video => {
+                return {
+                    ...video,
+                    isFavorite: isVideoFavorite(video, favorites)
+                }
+            }
+        );
+        const lastSearchedWithFavorites = lastSearchedVideos.map(
+            video => {
+                return {
+                    ...video,
+                    isFavorite: isVideoFavorite(video, favorites)
+                }
+            }
+        );
+        setRecentlyViewed(recentlyViewedWithFavorites);
+        setLastSearchedVideos(lastSearchedWithFavorites);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [favorites]);
+    }, [favorites]);
 
     const history = useHistory();
-    
+
     const handleVideoSelect = myVideoId => {
         history.push(`/videoDetail/${myVideoId}`);
-    }
-    
-    const handleFavToggle = video => {       
-        const newFavorites = updateFavorites(video, favorites);    
+    };
+
+    const handleFavToggle = video => {
+        const newFavorites = updateFavorites(video, favorites);
         setFavorites(newFavorites);
-      }
-    
+    };
+
     return (
         <div>
-            {recentlyViewed.length === 0 && lastSearchedVideos.length === 0 ?
+            {!recentlyViewed.length && !lastSearchedVideos.length ?
                 <p>No recent history found. Please go back to Home and search for your favorite video!</p> :
                 <div>
                     {recentlyViewed.length !== 0 &&
-                    <VideoList
-                        videos={recentlyViewed}
-                        onSelect={handleVideoSelect}
-                        onFavToggle={handleFavToggle}
-                        header="My recently viewed videos"
-                        headerStyle="topHeader"
-                        className="recentlyViewedHistoryPage"
-                        type="horizontal5"
-                    />
+                        <VideoList
+                            videos={recentlyViewed}
+                            onSelect={handleVideoSelect}
+                            onFavToggle={handleFavToggle}
+                            header="My recently viewed videos"
+                            headerStyle="topHeader"
+                            className="recentlyViewedHistoryPage"
+                            type="horizontal5"
+                        />
                     }
                     {lastSearchedVideos.length !== 0 &&
-                    <VideoList
-                        videos={lastSearchedVideos}
-                        onSelect={handleVideoSelect}
-                        onFavToggle={handleFavToggle}
-                        header="My last search results"
-                        headerStyle="lastSearchesHistoryPage"
-                        className="lastSearchesHistoryPage"
-                        type="lastSearchesHistoryPage"
-                    />
+                        <VideoList
+                            videos={lastSearchedVideos}
+                            onSelect={handleVideoSelect}
+                            onFavToggle={handleFavToggle}
+                            header="My last search results"
+                            headerStyle="lastSearchesHistoryPage"
+                            className="lastSearchesHistoryPage"
+                            type="lastSearchesHistoryPage"
+                        />
                     }
                 </div>
             }

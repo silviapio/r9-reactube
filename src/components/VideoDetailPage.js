@@ -19,26 +19,27 @@ const VideoDetailPage = () => {
 
     useEffect(() => {
         getSingleVideoInfo(id)
-        .then((response) => {
-            const videoToDisplay = response.data.items[0];
-            videoToDisplay.id = {videoId: videoToDisplay.id}; //solves youtube inconsistency in id object (single search response)
-            videoToDisplay.isFavorite = isVideoFavorite(videoToDisplay, favorites);
-            setMyVideo(videoToDisplay);
-            if (!wasVideoDisplayedAlready(videoToDisplay.id.videoId)) {
-                const updatedVideos = [
-                    ...recentlyViewed,
-                ]
-                updatedVideos.unshift(videoToDisplay);
-                setRecentlyViewed(updatedVideos);
-            }
-        getYoutubeResult(null, videoToDisplay.id.videoId)
-        .then((response) => {
-            const videoList = response.data.items;
-            videoList.forEach(video => video.isFavorite = isVideoFavorite(video, favorites));
-            setVideos(videoList);
-        });
-        }); 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+            .then((response) => {
+                const videoToDisplay = response.data.items[0];
+                videoToDisplay.id = { videoId: videoToDisplay.id }; //solves youtube inconsistency in id object (single search response)
+                videoToDisplay.isFavorite = isVideoFavorite(videoToDisplay, favorites);
+                setMyVideo(videoToDisplay);
+                if (!wasVideoDisplayedAlready(videoToDisplay.id.videoId)) {
+                    const updatedVideos = [
+                        videoToDisplay,
+                        ...recentlyViewed
+                    ]
+                    setRecentlyViewed(updatedVideos);
+                }
+                getYoutubeResult(null, videoToDisplay.id.videoId)
+                    .then((response) => {
+                        const videoListWithFavorites = response.data.items.map(video => {
+                            return { ...video, isFavorite: isVideoFavorite(video, favorites) }
+                        });
+                        setVideos(videoListWithFavorites);
+                    });
+            });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const wasVideoDisplayedAlready = myVideoId => {
@@ -49,40 +50,40 @@ const VideoDetailPage = () => {
     const handleVideoSelection = myVideoId => {
         setMyVideo(videos.filter(video => video.id.videoId === myVideoId)[0]);
         getYoutubeResult(null, myVideoId)
-        .then((response) =>{
-            const videoList = response.data.items;
-            setVideos(videoList);
-        });
+            .then((response) => {
+                const videoList = response.data.items;
+                setVideos(videoList);
+            });
     };
 
     const handleFavToggle = video => {
         const newFavorites = updateFavorites(video, favorites);
         setFavorites(newFavorites);
-    }; 
-    
-    return(
+    };
+
+    return (
         <MyGrid fluid>
             { !myVideo ?
-            <div /> :
-            <div>
-            <MyRow>
-                <VideoDetail 
-                    video={myVideo} 
-                    isFavorite={myVideo.isFavorite} 
-                    onFavToggle={handleFavToggle} 
-                />
-            </MyRow>
-            <MyRow>
-                <VideoList 
-                    header="Related videos" 
-                    videos={videos} 
-                    onSelect={handleVideoSelection}
-                    onFavToggle={handleFavToggle}
-                 />
-            </MyRow>
-            </div>}
+                <div /> :
+                <div>
+                    <MyRow>
+                        <VideoDetail
+                            video={myVideo}
+                            isFavorite={myVideo.isFavorite}
+                            onFavToggle={handleFavToggle}
+                        />
+                    </MyRow>
+                    <MyRow>
+                        <VideoList
+                            header="Related videos"
+                            videos={videos}
+                            onSelect={handleVideoSelection}
+                            onFavToggle={handleFavToggle}
+                        />
+                    </MyRow>
+                </div>}
         </MyGrid>
-      );
+    );
 };
 
 export default VideoDetailPage;

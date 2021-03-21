@@ -1,7 +1,13 @@
 import { SelectedVideoContainer, VideoDetailContainer, VideoTextContainer } from './VideoDetail.styles';
 import FavoriteToggler from './FavoriteToggler';
 
-const VideoDetail = ({ video, video: { id: { videoId }, snippet: { title, description } }, onFavToggle, isFavorite }) => {
+const VideoDetail = ({
+    video,
+    video: {
+        id: { videoId },
+        snippet: { title, description } },
+    onFavToggle,
+    isFavorite }) => {
     const handleFavToggle = video => () => onFavToggle(video);
 
     const maxDescriptionLength = 300;
