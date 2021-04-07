@@ -42,10 +42,7 @@ const VideoDetailPage = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
-    const wasVideoDisplayedAlready = myVideoId => {
-        let videoFound = recentlyViewed.filter(recentlyViewedItem => recentlyViewedItem.id.videoId === myVideoId);
-        return videoFound.length === 1;
-    }
+    const wasVideoDisplayedAlready = myVideoId => recentlyViewed.filter(({ id }) => id.videoId === myVideoId).length === 1;
 
     const handleVideoSelection = myVideoId => {
         setMyVideo(videos.filter(video => video.id.videoId === myVideoId)[0]);

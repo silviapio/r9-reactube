@@ -10,15 +10,11 @@ function VideoList({ onSelect, onFavToggle, header, videos, loading, type, heade
         onFavToggle(video);
     };
 
-    let videosToDisplay;
-    if ((type === "lastSearchesHistoryPage" || type === "favoritesHome")) {
-        videosToDisplay = videos.filter(video => video.snippet).slice(0, 10)
-    }
-    else if (type === "favoritesPage") {
-        videosToDisplay = videos.filter(video => video.snippet);
-    } else {
-        videosToDisplay = videos.filter(video => video.snippet).slice(0, 5);
-    }
+    const videosFiltered = videos.filter(video => video.snippet);
+    const isXPage = type === "lastSearchesHistoryPage" || type === "favoritesHome";
+    const isFavoritesPage = type === "favoritesPage";
+    const limit = (isFavoritesPage || isXPage) ? isXPage ? 10 : 0 : 5;
+    const videosToDisplay = !limit ? videosFiltered : videosFiltered.slice(0, limit);
 
     return (
         <VideoListOuterContainer $loading={loading} className={className}>
