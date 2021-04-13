@@ -53,9 +53,9 @@ const SearchHistory = () => {
     return (
         <div>
             {!recentlyViewed.length && !lastSearchedVideos.length ?
-                <p>No recent history found. Please go back to Home and search for your favorite video!</p> :
+                null :
                 <div>
-                    {recentlyViewed.length !== 0 &&
+                    {recentlyViewed.length &&
                         <VideoList
                             videos={recentlyViewed}
                             onSelect={handleVideoSelect}
@@ -66,7 +66,7 @@ const SearchHistory = () => {
                             type="horizontal5"
                         />
                     }
-                    {lastSearchedVideos.length !== 0 &&
+                    {lastSearchedVideos.length &&
                         <VideoList
                             videos={lastSearchedVideos}
                             onSelect={handleVideoSelect}

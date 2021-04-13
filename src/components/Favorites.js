@@ -17,15 +17,17 @@ const Favorites = () => {
   };
 
   return (
-    <VideoList
-      videos={favorites}
-      onSelect={handleVideoSelect}
-      onFavToggle={handleFavRemoval}
-      header="All my favorite videos"
-      headerStyle="topHeader"
-      type="favoritesPage"
-      className="favoritesPage"
-    />
+    favorites.length ?
+      <VideoList
+        videos={favorites}
+        onSelect={handleVideoSelect}
+        onFavToggle={handleFavRemoval}
+        header="All my favorite videos"
+        headerStyle="topHeader"
+        type="favoritesPage"
+        className="favoritesPage"
+      /> :
+      null
   );
 }
 

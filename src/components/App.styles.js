@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 export const SidebarContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 15px 0 0 15px;
+    padding-left: 10px;
     height: 100vh;
     a:hover, a:active {
         color: #686D76;
@@ -32,7 +32,7 @@ export const SidebarContainer = styled.div`
             display: flex;
             align-items: center;
             h4 {
-                margin-left: 4px;
+                margin: 14px 0 14px 0;
             }
         }
     }

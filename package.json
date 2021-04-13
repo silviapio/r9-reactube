@@ -2,10 +2,12 @@
   "name": "r9-reactube",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
+    "@testing-library/user-event": "^12.6.3"
+  },
+  "dependencies": {
     "axios": "^0.21.1",
     "immer": "^8.0.1",
     "moment": "^2.29.1",

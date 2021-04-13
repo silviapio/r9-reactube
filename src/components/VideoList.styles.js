@@ -1,5 +1,5 @@
-import styled  from 'styled-components';
-import {mediumPhone, smallTablet} from '../utils/mediaQueries';
+import styled from 'styled-components';
+import { mediumPhone, smallTablet } from '../utils/mediaQueries';
 
 export const VideoListOuterContainer = styled.div`
     h4 {
@@ -8,7 +8,7 @@ export const VideoListOuterContainer = styled.div`
     h5 {
         margin: 5px 5px 5px 10px;
     }
-    opacity: ${props => props.loading && "0.2"};
+    opacity: ${props => props.loading ? "0.2" : 1};
     &.recentlyViewedHistoryPage {
         border-bottom: 2px solid #dfe0df;
     } 
@@ -52,9 +52,9 @@ export const VideoListContainer = styled.div`
     }
     &.favoritesPage {
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
         img {
-            max-width: 15vw;
+            max-width: 24vw;
             height: auto
         }
         ${mediumPhone} {

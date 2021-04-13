@@ -28,7 +28,6 @@ const Home = () => {
       }
     });
     setVideos(newVideos);
-    console.log("added favorite property to videos OK");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favorites]);
 
@@ -54,8 +53,6 @@ const Home = () => {
         let videoList = [];
         if (userHasSearched) {
           videoList = response.data.items;
-          console.log("response");
-          console.log(response.data.items)
           if (!isRepeatingSearch) {
             const newSearch = {
               searchString: inputSearchBar,
@@ -135,10 +132,9 @@ const Home = () => {
       </MyRow>
       <MyRow>
         <MyCol xs={12} xl={6}>
-          {searchHistory.length === 0 ?
-            <div><p>No recent searches found. Try with your first one!</p></div> :
+          {searchHistory.length ?
             !isLoading &&
-            <div>
+            <>
               <h5>My recent searches</h5>
               {searchHistory.map((historyEntry, i) =>
                 <SearchHistoryItem
@@ -148,17 +144,22 @@ const Home = () => {
                   timeStamp={historyEntry.timeStamp}
                   onClick={repeatSearch}
                 />)}
-            </div>
+            </> :
+            <h6>No recent searches found...</h6>
           }
         </MyCol>
         <MyCol xs={12} xl={6}>
-          <VideoList
-            videos={favorites}
-            onSelect={handleVideoSelect}
-            onFavToggle={handleFavToggle}
-            header="My favorite videos"
-            type="favoritesHome"
-            className="favoritesHome" />
+          {favorites.length ?
+            !isLoading &&
+            <VideoList
+              videos={favorites}
+              onSelect={handleVideoSelect}
+              onFavToggle={handleFavToggle}
+              header="My favorite videos"
+              type="favoritesHome"
+              className="favoritesHome" /> :
+            <h6>No favorites found...</h6>
+          }
         </MyCol>
       </MyRow>
     </MyGrid>
