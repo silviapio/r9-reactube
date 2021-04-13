@@ -1,0 +1,227 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "ATb_fxZtUORG8zO6X1YjVN_sRXo",
+    "nextPageToken": "CAUQAA",
+    "regionCode": "US",
+    "pageInfo": {
+        "totalResults": 72,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "NoDZGJoSW5MlRaAB2p8tiBfwZ20",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "A_HjMIjzyMU"
+            },
+            "snippet": {
+                "publishedAt": "2019-05-08T15:43:29Z",
+                "channelId": "UC3gNmTGu-TTbFPpfSs5kNkg",
+                "title": "Shrek 2 (2004) - I Need a Hero Scene (7/10) | Movieclips",
+                "description": "Shrek 2 - I Need a Hero: Shrek (Michael Myers), Donkey (Eddie Murphy), Puss in Boots (Antonio Banderas), and the Gingerbread Men race to save Fiona (Cameron Diaz).\nBUY THE MOVIE: https://www.fandangonow.com/details/movie/shrek-2-2004/1MVa9f0a830468ec9a3f500a4d235ea0333?cmp=Movieclips_YT_Description\n\nWatch the best Shrek 2 scenes & clips:\nhttps://www.youtube.com/playlist?list=PLZbXA4lyCtqomJl4RLq4kmdT2SIhiD7U1\n\nFILM DESCRIPTION:\nAfter returning from their honeymoon and showing home movies to their friends, Shrek and Fiona learn that her parents have heard that she has married her true love and wish to invite him to their kingdom, called Far Far Away. The catch is: Fiona's parents are unaware of the curse that struck their daughter and have assumed she married Prince Charming, not a 700-pound ogre with horrible hygiene and a talking donkey pal.\n\nCREDITS:\nTM & © Dreamworks Animation (2004)\nCast: Antonio Banderas, Cameron Diaz, Eddie Murphy, Jennifer Saunders, Mike Myers, Rupert Everett\nDirector: Andrew Adamson, Conrad Vernon, Kelly Asbury\nScreenwriter: Andrew Adamson, David N. Weiss, J. David Stem, Joe Stillman\n\nWatch More:\n► Fresh New Clips: http://bit.ly/2taDWqW\n► Classic Trailers: http://bit.ly/2qTCxHF\n► Hot New Trailers: http://bit.ly/2qThrsF\n► Clips From Movies Coming Soon: http://bit.ly/2FrP8VL\n► Indie Movie Clips: http://bit.ly/2qTZMRE\n► Deleted Scenes: http://bit.ly/2ARbLPJ\n► Bloopers: http://bit.ly/2qYmBnc\n► Celebrity Interviews: http://bit.ly/2D4tzw4\n\nFuel Your Movie Obsession: \n► Subscribe to MOVIECLIPS: http://bit.ly/2CZa490\n► Watch Movieclips ORIGINALS: http://bit.ly/2D3sipV\n► Like us on FACEBOOK: http://bit.ly/2DikvkY\n► Follow us on TWITTER: http://bit.ly/2mgkaHb\n► Follow us on INSTAGRAM: http://bit.ly/2mg0VNU\n\nThe MOVIECLIPS channel is the largest collection of licensed movie clips on the web. Here you will find unforgettable moments, scenes, and lines from all your favorite films. Made by movie fans, for movie fans.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/A_HjMIjzyMU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/A_HjMIjzyMU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/A_HjMIjzyMU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/A_HjMIjzyMU/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/A_HjMIjzyMU/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Movieclips",
+                "liveBroadcastContent": "none",
+                "publishTime": "2019-05-08T15:43:29Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "w1f8ZVNw1b_D8vH3aVrKSDSL5eM",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "C-xL5MROiM0"
+            },
+            "snippet": {
+                "publishedAt": "2020-07-08T12:36:38Z",
+                "channelId": "UCl6Sc_rNW7INU9kovV5SuAA",
+                "title": "DreamWorks Madagascar | Sixty Nine Years? | Madagascar 3: Europe's Most Wanted | Kids Movies",
+                "description": "🦁Subscribe to watch more: https://bit.ly/2JuXz4U\n\nBuy / Rent / Watch Madagascar on:\n▶︎ Amazon: https://amzn.to/2KG8UQ3\n▶︎ YouTube Movies: http://bit.ly/2UnsMv4\n▶︎ Google Play: http://bit.ly/2WoLRPu\n▶︎ iTunes: https://apple.co/2TXM2jx\n▶︎ Netflix: : https://bit.ly/2KH8UPR\n\n🐙Madagascar - All Videos: https://bit.ly/2DDJHDY\n🐨Madagascar: https://bit.ly/2CKrOSg\n🐵Madagascar: Escape 2 Africa: https://bit.ly/2Sakvx6\n🐠Madagascar 3: Europe's Most Wanted: https://bit.ly/2CNvIKm\n🐧Penguins of Madagascar: https://bit.ly/2MG0Gc0\n🐿Meet the Crew: https://bit.ly/2Th4RNN\n\n\nWelcome to  Madagascar and Friends Official YouTube Channel! \n\nThink you know everything about the characters in Madagascar? Brush up on your knowledge here with clips from the movies, songs and specials of all your furry and feathery friends!\n\nThe film's plot revolves around four animals from the Central Park Zoo who unexpectedly find themselves stranded on the island of Madagascar, and must learn to adapt to the wild. Madagascar launched a franchise with a series of films, including the sequel Madagascar: Escape 2 Africa in 2008 and another film Madagascar 3: Europe's Most Wanted in 2012. A spin-off featuring the series' penguin characters, Penguins of Madagascar, was released on November 26, 2014.\n\n#Madagascar3 #DreamWorks #MovieClips",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/C-xL5MROiM0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/C-xL5MROiM0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/C-xL5MROiM0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/C-xL5MROiM0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/C-xL5MROiM0/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "DreamWorks Madagascar",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-07-08T12:36:38Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Yfhe9-UCaq9RfWhHOcipTOTagqM",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "D5C2wGxlYzI"
+            },
+            "snippet": {
+                "publishedAt": "2019-12-13T13:01:39Z",
+                "channelId": "UCl6Sc_rNW7INU9kovV5SuAA",
+                "title": "DreamWorks Madagascar | Funny Lemur Moments | Madagascar Movie Clip",
+                "description": "🦁Subscribe to watch more: https://bit.ly/2JuXz4U\n\nBuy / Rent / Watch Madagascar on: \n▶︎ Amazon: https://amzn.to/2FP02ZO\n▶︎ YouTube Movies: https://bit.ly/2Rp9Kn5\n▶︎ Google Play: http://bit.ly/2G35Nl6\n▶︎ iTunes: https://apple.co/2DOXUi6\n▶︎ Netflix: : https://bit.ly/2KOd6xz\n\n🐙Madagascar - All Videos: https://bit.ly/2DDJHDY\n🐨Madagascar: https://bit.ly/2CKrOSg\n🐵Madagascar: Escape 2 Africa: https://bit.ly/2Sakvx6\n🐠Madagascar 3: Europe's Most Wanted: https://bit.ly/2CNvIKm\n🐧Penguins of Madagascar: https://bit.ly/2MG0Gc0\n🐿Meet the Crew: https://bit.ly/2Th4RNN\n\n\n\nWelcome to  Madagascar and Friends Official YouTube Channel! \n\nThink you know everything about the characters in Madagascar? Brush up on your knowledge here with clips from the movies, songs and specials of all your furry and feathery friends!\n\nThe film's plot revolves around four animals from the Central Park Zoo who unexpectedly find themselves stranded on the island of Madagascar, and must learn to adapt to the wild. Madagascar launched a franchise with a series of films, including the sequel Madagascar: Escape 2 Africa in 2008 and another film Madagascar 3: Europe's Most Wanted in 2012. A spin-off featuring the series' penguin characters, Penguins of Madagascar, was released on November 26, 2014.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/D5C2wGxlYzI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/D5C2wGxlYzI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/D5C2wGxlYzI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/D5C2wGxlYzI/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/D5C2wGxlYzI/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "DreamWorks Madagascar",
+                "liveBroadcastContent": "none",
+                "publishTime": "2019-12-13T13:01:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "i2e0JtkUhAQQRwcvZSsspXyrrZY",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "jFWnVdsSgxs"
+            },
+            "snippet": {
+                "publishedAt": "2019-05-13T15:14:54Z",
+                "channelId": "UC3gNmTGu-TTbFPpfSs5kNkg",
+                "title": "Madagascar 3 (2012) - Circus Fireworks Scene (9/10) | Movieclips",
+                "description": "Madagascar 3 - Circus Fireworks: The Afro Circus gives an epic show to the tune of Katy Perry's \"Fireworks.\"\nBUY THE MOVIE: https://www.fandangonow.com/details/movie/madagascar-3-europes-most-wanted-2012/1MV59a82204b4cc80c130d4336dd30422c6?cmp=Movieclips_YT_Description\n\nWatch the best Madagascar 3: Europe's Most Wanted scenes & clips:\nhttps://www.youtube.com/playlist?list=PLZbXA4lyCtqr68jOb8DJxtzpuyW7-HB-h\n\nFILM DESCRIPTION:\nAnimal pals Alex (Ben Stiller), Marty (Chris Rock), Melman (David Schwimmer) and Gloria (Jada Pinkett Smith) are still trying to make it back to New York's Central Park Zoo. They are forced to take a detour to Europe to find the penguins and chimps who broke the bank at a Monte Carlo casino. When French animal-control officer Capitaine Chantel DuBois (Frances McDormand) picks up their scent, Alex and company are forced to hide out in a traveling circus.\n\nCREDITS:\nTM & © Dreamworks (2012)\nCast: Ben Stiller, Bryan Cranston, Cedric the Entertainer, Chris Rock, Conrad Vernon, David Schwimmer, Jada Pinkett Smith, Jessica Chastain, Sacha Baron Cohen\nDirector: Conrad Vernon, Eric Darnell, Tom McGrath\nScreenwriter: Eric Darnell, Noah Baumbach\n\nWatch More:\n► Fresh New Clips: http://bit.ly/2taDWqW\n► Classic Trailers: http://bit.ly/2qTCxHF\n► Hot New Trailers: http://bit.ly/2qThrsF\n► Clips From Movies Coming Soon: http://bit.ly/2FrP8VL\n► Indie Movie Clips: http://bit.ly/2qTZMRE\n► Deleted Scenes: http://bit.ly/2ARbLPJ\n► Bloopers: http://bit.ly/2qYmBnc\n► Celebrity Interviews: http://bit.ly/2D4tzw4\n\nFuel Your Movie Obsession: \n► Subscribe to MOVIECLIPS: http://bit.ly/2CZa490\n► Watch Movieclips ORIGINALS: http://bit.ly/2D3sipV\n► Like us on FACEBOOK: http://bit.ly/2DikvkY\n► Follow us on TWITTER: http://bit.ly/2mgkaHb\n► Follow us on INSTAGRAM: http://bit.ly/2mg0VNU\n\nThe MOVIECLIPS channel is the largest collection of licensed movie clips on the web. Here you will find unforgettable moments, scenes, and lines from all your favorite films. Made by movie fans, for movie fans.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/jFWnVdsSgxs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/jFWnVdsSgxs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/jFWnVdsSgxs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/jFWnVdsSgxs/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/jFWnVdsSgxs/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Movieclips",
+                "liveBroadcastContent": "none",
+                "publishTime": "2019-05-13T15:14:54Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "IKvAdMul7f5JBYGl3k11cAgkNwU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "astISOttCQ0"
+            },
+            "snippet": {
+                "publishedAt": "2007-10-09T20:44:22Z",
+                "channelId": "UCLoKWb_rlp80mg0aSLtsUGw",
+                "title": "The Gummy Bear Song - Long English Version",
+                "description": "SHOP at http://www.GUMMYBEARSHOP.com\nSubscribe to my real channel at http://www.youtube.com/gummybearintl\n\n\nFrom the CD \"I Am Your Gummy Bear\".\nAlso from the DVD \"I Am A Gummy Bear\".\nAvailable on Amazon at: http://tinyurl.com/gummybeardvd\nShirts and merch - http://www.gummytees.com\n\nAvailable on iTunes at: http://tinyurl.com/itunesgummybear\nAvailable on Amazon at: http://tinyurl.com/gummybearcd\n\n\nGUMMIBÄR T-SHIRTS AND MERCH: http://imagummybear.spreadshirt.com\n\nSign up for the Gummibär mailing list to win great prizes! - http://www.gummibar.net/newsletter\n\nPLAY GUMMIBÄR (THE GUMMY BEAR) GAME: http://www.gummybeargame.com\n\nVISIT ON FACEBOOK: http://www.facebook.com/funnygummy\n\nFOLLOW ON TWITTER: http://www.twitter.com/imagummybear\n\nVISIT ON MYSPACE: http://www.myspace.com/funnygummy\n\nFOLLOW ON PINTEREST: http://www.pinterest.com/imagummybear\n\nSEND A GUMMIBÄR ECARD: http://www.funnygummy.com\n\nGUMMIBÄR JAPAN: http://www.gummybear.jp\n\nOSITO GOMINOLA: http://www.ositogominola.mx\n\n\nThe original 30 second video for Itt Van A Gumimaci, the Hungarian version of I Am A Gummy Bear, debuted on the internet in August of 2006. It quickly went viral, gaining hundreds of thousands of views as the popularity of this catchy song and funny character increased and spread by word of mouth. A 30 second English version was then created which helped to increase the clip's popularity and views rocketed up into the millions. By the summer of 2007, the final full length 2:30 version was released and it has been gaining views and viewers ever since.\n\n* I Am A Gummy Bear (The Gummy Bear Song) has been recorded in over 25 languages and has been released in more than 40 countries world-wide.\n\n* Every day, the online videos for The Gummy Bear Song are watched more than 1 million times.\n\nChart Positions include:\n\nUSA\n# 1 Dance Singles Chart -- iTunes\n# 1 Dance Ringtone Chart -- iTunes\n\nCanada\nHot 100 Pop Singles Sales Chart\n# 1 Dance Singles Chart -- iTunes\n\nGreece\n# 1 Pop Singles Chart iTunes\n\nHungary\n# 1 Pop Singles Chart iTunes\n# 1 Pop Ringtones Chart iTunes\n\nSweden\n# 2 Pop Singles Sales Chart\n\nAustralia\n# 2 Pop Singles Sales Chart\n\nNorway\n# 5 Pop Singles Sales Chart\n\nFrance\n# 8 Pop Singles Sales Chart (52 weeks in the Top 40)\n\nJapan\nTop 10 Pop Digital Downloads\n\nPoland\n# 1 Pop Ringtones Chart\n\nGermany\n# 1 Ringtone Download AOL & Vodaphone Charts\n\nRussia\n# 1 Pop Downloads Chart\n\nMexico\n# 1 Pop Downloads Chart\n\nSales Certification Awards Include:\n\nSweden\nSingle Certified Gold\n\nHungary\nSingle Certified Gold\n\nRussia\nSingle Certified Gold\n\nAustralia\nSingle Certified Gold\n\nSpain\nSingle Certified Gold",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/astISOttCQ0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/astISOttCQ0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/astISOttCQ0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/astISOttCQ0/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    }
+                },
+                "channelTitle": "icanrockyourworld",
+                "liveBroadcastContent": "none",
+                "publishTime": "2007-10-09T20:44:22Z"
+            }
+        }
+    ]
+}
