@@ -50,3 +50,12 @@ export const SidebarContainer = styled.div`
         border: none;
     }
 `;
+
+export const LogoIcon = styled.img`
+    max-height: 1.5rem;
+`;
+
+export const LogoWords = styled.img`
+    height: .8rem;
+    margin-left: .2rem;
+`;

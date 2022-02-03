@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import { FaYoutube } from 'react-icons/fa';
 import Menu from './Menu';
 import Home from './Home';
 import Favorites from './Favorites';
 import SearchHistory from './SearchHistory';
 import VideoDetailPage from './VideoDetailPage';
-import { GlobalStyle, SidebarContainer } from './App.styles';
+import { GlobalStyle, SidebarContainer, LogoIcon, LogoWords } from './App.styles';
 import { MyGrid, MyRow, MyCol } from './Home.styles';
+import logoWords from '../images/reactube-logo-words.svg';
+import logoIcon from '../images/reactube-logo-camera.svg';
 
 const App = () =>
     <Router>
@@ -18,8 +19,8 @@ const App = () =>
                         <Link to="/">
                             <header>
                                 <div>
-                                    <FaYoutube />
-                                    <h4>Reactube</h4>
+                                    <LogoIcon src={logoIcon} alt="videocamera icon" className="logo__icon" />
+                                    <LogoWords src={logoWords} alt="reactube" className="logo__words" />
                                 </div>
                             </header>
                         </Link>
