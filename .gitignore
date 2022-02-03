@@ -22,5 +22,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#api keys
+# api keys
 privateKeys.js
+
+# local only
+toDo.md
