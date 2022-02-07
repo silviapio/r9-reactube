@@ -6,7 +6,6 @@ export const VideoItemContainer = styled.div`
     border-radius: 5px;
     max-width: 16vw;
     img {
-        width: 95%;
         margin: auto;
     }
     :hover{
