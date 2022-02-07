@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MenuDiv } from './Menu.styles';
 import { FaHome, FaHeart, FaClock } from 'react-icons/fa';
+import { HiHome, HiHeart, HiClock } from 'react-icons/hi';
 
 const Menu = () =>
     <MenuDiv>
@@ -8,7 +9,7 @@ const Menu = () =>
             <Link to="/">
                 <li>
                     <div>
-                        <FaHome />
+                        <HiHome />
                         <h5>Home</h5>
                     </div>
                 </li>
@@ -16,7 +17,7 @@ const Menu = () =>
             <Link to="/favorites">
                 <li>
                     <div>
-                        <FaHeart />
+                        <HiHeart />
                         <h5>Favorites</h5>
                     </div>
                 </li>
@@ -24,7 +25,7 @@ const Menu = () =>
             <Link to="/history">
                 <li>
                     <div>
-                        <FaClock />
+                        <HiClock />
                         <h5>History</h5>
                     </div>
                 </li>

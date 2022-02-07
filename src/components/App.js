@@ -6,7 +6,7 @@ import SearchHistory from './SearchHistory';
 import VideoDetailPage from './VideoDetailPage';
 import { GlobalStyle, SidebarContainer, LogoIcon, LogoWords } from './App.styles';
 import { MyGrid, MyRow, MyCol } from './Home.styles';
-import logoWords from '../images/reactube-logo-words.svg';
+import logoWords from '../images/reactube.svg';
 import logoIcon from '../images/reactube-logo-camera.svg';
 
 const App = () =>

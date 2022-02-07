@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { smallTablet, mediumPhone } from '../utils/mediaQueries';
 
 export const InputContainer = styled.div`
     max-width: 650px;
@@ -19,6 +20,13 @@ export const InputContainer = styled.div`
         }
         :focus {
             outline: none;
+        }
+    }
+    ${mediumPhone} {
+        padding: 0 13px; 
+        input {
+            margin: 0;
+            padding: 0;
         }
     }
 `;

@@ -25,12 +25,16 @@ export const MenuDiv = styled.div`
     }
     ${mediumPhone} {
         margin-top: 0;
+        a {
+            margin-left: 10px;
+        }
         ul {
             margin: 0;
-            font-size: 1rem;
+            font-size: 1.1rem;
             display: flex;
+            flex-direction: row-reverse;
             li {
-                margin: 0 5px;
+                margin: 0;
                 h5 {
                     display: none;
                 }

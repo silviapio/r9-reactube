@@ -23,7 +23,7 @@ export const SidebarContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 10px;
-    height: 100vh;
+    max-height: 100vh;
     a:hover, a:active {
         color: #686D76;
     }
@@ -45,8 +45,10 @@ export const SidebarContainer = styled.div`
         }
     }
     ${mediumPhone} {
+        flex-direction: row;
+        justify-content: space-between;
         max-height: 80px;
-        padding: 0 0 0 15px;
+        padding: 15px 15px;
         border: none;
     }
 `;
@@ -56,6 +58,6 @@ export const LogoIcon = styled.img`
 `;
 
 export const LogoWords = styled.img`
-    height: .8rem;
-    margin-left: .2rem;
+    height: 1rem;
+    margin-left: .3rem;
 `;
