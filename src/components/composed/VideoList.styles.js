@@ -64,7 +64,8 @@ export const VideoListContainer = styled.div`
     }
   }
   &.lastSearchesHistoryPage,
-  &.recentlyViewedHistoryPage {
+  &.recentlyViewedHistoryPage,
+  &.favoritesPage {
     flex-wrap: wrap;
     justify-content: flex-start;
     img {

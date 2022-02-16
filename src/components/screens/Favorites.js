@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import VideoList from "../composed/VideoList";
+import SectionTitle from "../units/SectionTitle";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
 import { updateFavorites } from "../../utils/favoritesUtils";
 
@@ -16,17 +17,18 @@ const Favorites = () => {
     setFavorites(newFavorites);
   };
 
-  return favorites.length ? (
+  return favorites.length !== 0 ? (
     <VideoList
       videos={favorites}
       onSelect={handleVideoSelect}
       onFavToggle={handleFavRemoval}
       header="All my favorite videos"
-      headerStyle="topHeader"
       type="favoritesPage"
       className="favoritesPage"
     />
-  ) : null;
+  ) : (
+    <SectionTitle text="No favorites found ¯\_(ツ)_/¯" className="favoritesPage" />
+  );
 };
 
 export default Favorites;

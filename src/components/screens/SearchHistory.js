@@ -65,7 +65,7 @@ const SearchHistory = () => {
                 className="recentlyViewedHistoryPage"
                 type="horizontal5"
               />
-              <HorizontalLine />
+              {lastSearchedVideos.length !== 0 && <HorizontalLine />}
             </>
           )}
           {lastSearchedVideos.length !== 0 && (
