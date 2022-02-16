@@ -1,27 +1,54 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HistoryItemContainer = styled.div`
-    display: flex;
-    margin: 5px 0;
-    padding: 10px;
-    border-bottom: 2px solid #dfe0df;
-    img {
-        max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 1px;
+  padding: 10px;
+  img {
+    max-height: 2.5rem;
+    border-radius: 5px;
+  }
+
+  button {
+    margin-left: auto;
+    border: none;
+    border-radius: 5px;
+    width: 35px;
+    height: 35px;
+    :hover {
+      cursor: pointer;
+      border: 1px solid #475569;
     }
-    p {
-        margin: 5px 10px 0 10px;
-        font-size: 1rem;
-        time {
-            font-size: 0.8rem;
-        }
+    :focus {
+      border: 1px solid #475569;
+      outline: none;
     }
-    button {
-        margin-left: auto;
-        border-radius: 5px;
-        :hover {
-            cursor: pointer;
-            background-color: #D8E0DF;
-        }
+  }
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 5px;
+  p {
+    margin: 0 5px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    time {
+      font-size: 0.7rem;
     }
-    
+  }
+  svg {
+    margin-left: auto;
+  }
+`;
+
+export const TimeContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `;

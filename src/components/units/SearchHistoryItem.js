@@ -1,20 +1,29 @@
-import Moment from 'react-moment';
-import 'moment-timezone';
-import { HistoryItemContainer } from './SearchHistoryItem.styles';
-import { FaSearch } from 'react-icons/fa';
-import ReactTooltip from 'react-tooltip';
+import Moment from "react-moment";
+import "moment-timezone";
+import { HistoryItemContainer, TextContainer, TimeContainer } from "./SearchHistoryItem.styles";
+import { HiOutlineSearch, HiOutlineClock } from "react-icons/hi";
 
-const SearchHistoryItem = (props) => {
-    const handleClick = searchString => () => props.onClick(searchString);
-    return (
-        <HistoryItemContainer>
-            <img alt="search result" src={props.videos[0].snippet.thumbnails.default.url} />
-            <p>{props.searchString} 🕑 <Moment fromNow tz="Europe/Madrid">{props.timeStamp}</Moment></p>
-
-            <button data-tip="Repeat search" onClick={handleClick(props.searchString)}><FaSearch /></button>
-            <ReactTooltip place="top" type="light" effect="solid" />
-        </HistoryItemContainer>
-    );
-}
+const SearchHistoryItem = props => {
+  const handleClick = searchString => () => props.onClick(searchString);
+  return (
+    <HistoryItemContainer>
+      <img alt="search result" src={props.videos[0].snippet.thumbnails.default.url} />
+      <TextContainer>
+        <p>{props.searchString}</p>
+        <TimeContainer>
+          <HiOutlineClock />
+          <p>
+            <Moment fromNow tz="Europe/Madrid">
+              {props.timeStamp}
+            </Moment>
+          </p>
+        </TimeContainer>
+      </TextContainer>
+      <button data-tip="Repeat search" onClick={handleClick(props.searchString)}>
+        <HiOutlineSearch />
+      </button>
+    </HistoryItemContainer>
+  );
+};
 
 export default SearchHistoryItem;

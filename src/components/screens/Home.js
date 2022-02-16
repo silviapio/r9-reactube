@@ -4,6 +4,7 @@ import { MyGrid, MyRow, MyCol } from "./Home.styles";
 import SearchBar from "../units/SearchBar";
 import VideoList from "../composed/VideoList";
 import SearchHistoryItem from "../units/SearchHistoryItem";
+import SectionTitle from "../units/SectionTitle";
 import HorizontalLine from "../units/HorizontalLine";
 import { getYoutubeResult } from "../../services/youtube";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
@@ -135,15 +136,23 @@ const Home = () => {
           {searchHistory.length ? (
             !isLoading && (
               <>
-                <h5>My recent searches</h5>
+                <SectionTitle text="My recent searches" className="home__recent-searches" />
                 {searchHistory.map((historyEntry, i) => (
-                  <SearchHistoryItem
-                    key={i}
-                    searchString={historyEntry.searchString}
-                    videos={historyEntry.searchedVideos}
-                    timeStamp={historyEntry.timeStamp}
-                    onClick={repeatSearch}
-                  />
+                  <div key={i}>
+                    <SearchHistoryItem
+                      searchString={historyEntry.searchString}
+                      videos={historyEntry.searchedVideos}
+                      timeStamp={historyEntry.timeStamp}
+                      onClick={repeatSearch}
+                    />
+                    <HorizontalLine
+                      className={
+                        i === searchHistory.length - 1
+                          ? "home__recent-searches__hr--long"
+                          : "home__recent-searches__hr--dotted"
+                      }
+                    />
+                  </div>
                 ))}
               </>
             )

@@ -8,4 +8,7 @@ export const TitleContainer = styled.div`
   &.video-detail__related-videos {
     margin: 5px 5px 5px 14px;
   }
+  &.home__recent-searches {
+    margin: 5px 5px 5px 11px;
+  }
 `;
