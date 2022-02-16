@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import VideoDetail from "../units/VideoDetail";
+import VideoDetail from "../composed/VideoDetail";
 import VideoList from "../composed/VideoList";
+import HorizontalLine from "../units/HorizontalLine";
 import { getSingleVideoInfo, getYoutubeResult } from "../../services/youtube";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
 import { updateFavorites, isVideoFavorite } from "../../utils/favoritesUtils";
@@ -62,12 +63,14 @@ const VideoDetailPage = () => {
           <MyRow>
             <VideoDetail video={myVideo} isFavorite={myVideo.isFavorite} onFavToggle={handleFavToggle} />
           </MyRow>
+          <HorizontalLine />
           <MyRow>
             <VideoList
               header="Related videos"
               videos={videos}
               onSelect={handleVideoSelection}
               onFavToggle={handleFavToggle}
+              className="video-detail__related-videos"
             />
           </MyRow>
         </div>

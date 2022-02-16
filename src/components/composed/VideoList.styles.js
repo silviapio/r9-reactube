@@ -88,4 +88,7 @@ export const VideoListContainer = styled.div`
   &.recentlyViewedHistoryPage {
     padding-left: 4px;
   }
+  &.video-detail__related-videos {
+    padding-left: 2px;
+  }
 `;
