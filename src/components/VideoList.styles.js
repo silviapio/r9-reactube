@@ -8,6 +8,11 @@ export const VideoListOuterContainer = styled.div`
     h5 {
         margin: 5px 5px 5px 10px;
     }
+    ${mediumPhone} {
+        h5 {
+            margin: 5px 5px 5px 12px;
+        }
+    }
     opacity: ${props => props.loading ? "0.2" : 1};
     &.recentlyViewedHistoryPage {
         border-bottom: 2px solid #dfe0df;

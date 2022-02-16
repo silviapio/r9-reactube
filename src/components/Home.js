@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { MyGrid, MyRow, MyCol } from './Home.styles';
+import { MyGrid, MyRow, MyCol, StyledHr } from './Home.styles';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import SearchHistoryItem from './SearchHistoryItem';
@@ -130,8 +130,9 @@ const Home = () => {
           }
         </MyCol>
       </MyRow>
+      <StyledHr className="hr"/>
       <MyRow>
-        <MyCol xs={12} xl={6}>
+        <MyCol xs={12} xl={6} className="col__search-history">
           {searchHistory.length ?
             !isLoading &&
             <>
@@ -145,10 +146,10 @@ const Home = () => {
                   onClick={repeatSearch}
                 />)}
             </> :
-            <h6>No recent searches found...</h6>
+            <h6>No recent searches found ¯\_(ツ)_/¯</h6>
           }
         </MyCol>
-        <MyCol xs={12} xl={6}>
+        <MyCol xs={12} xl={6} className="col__favorites">
           {favorites.length ?
             !isLoading &&
             <VideoList
@@ -158,7 +159,7 @@ const Home = () => {
               header="My favorite videos"
               type="favoritesHome"
               className="favoritesHome" /> :
-            <h6>No favorites found...</h6>
+            <div><h6>No favorites found ¯\_(ツ)_/¯</h6></div>
           }
         </MyCol>
       </MyRow>

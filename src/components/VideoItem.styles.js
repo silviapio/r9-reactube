@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import {mediumPhone, smallTablet, mediumDesktop} from '../utils/mediaQueries';
 
 export const VideoItemContainer = styled.div`
-    padding: 10px 4px;
+    padding: 4px;
     border-radius: 5px;
     max-width: 16vw;
     img {
         margin: auto;
+        border-radius: 5px;
     }
     :hover{
         cursor: pointer;
@@ -26,6 +27,8 @@ export const VideoItemContainer = styled.div`
     ${mediumPhone} {
         display: flex;
         max-width: 100%;
+        padding-left: 6px;
+        padding-right: 6px;
         img {
             max-width: 60%;
         }
@@ -58,6 +61,7 @@ export const VideoOnlyContainer = styled.div`
 export const VideoTitleContainer = styled.div`
     padding: 2px;
     font-size: 0.5em;
+    overflow: hidden;
     p {
         margin: 0;
     }
@@ -67,6 +71,12 @@ export const VideoTitleContainer = styled.div`
         p {
             margin: 0;
             max-width: 15vw;
+        }
+    }
+    ${mediumPhone} {
+        padding: 2px 2px 2px 6px;
+        p {
+            line-height: 1.4;
         }
     }
 `;

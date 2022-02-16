@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         margin: 0;
         background-color: #f6f6f6;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Lato', sans-serif;
         font-size: 1.3rem;
         color: #393e46;
     }

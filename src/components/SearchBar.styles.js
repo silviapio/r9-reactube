@@ -8,7 +8,7 @@ export const InputContainer = styled.div`
     padding-top: 14px;
     input {
         width: 100%;
-        margin: 0 10px 8px 5px;
+        padding-left: 3px;
         min-height: 1.3rem;
         border-radius: 5px;
         border: 2px solid #dfe0df;
@@ -23,10 +23,9 @@ export const InputContainer = styled.div`
         }
     }
     ${mediumPhone} {
-        padding: 0 13px; 
+        padding: 0 13px 0 11px; 
         input {
             margin: 0;
-            padding: 0;
         }
     }
 `;

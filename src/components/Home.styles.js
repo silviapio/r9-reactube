@@ -6,13 +6,13 @@ export const MyGrid = styled(Grid)`
     padding: 1px;
     margin: auto;
     border: none;
-    min-height: 100vh;
-    max-width: 100vw;
+    min-height: 100%;
+    min-width: 100%;
     box-sizing: border-box;
 `;
 export const MyRow = styled(Row)`
     padding: 1px;
-    border-bottom: 2px solid #dfe0df;
+    //border-bottom: 2px solid #dfe0df;
     :first-child, :last-child {
         border: none;
     }
@@ -32,4 +32,17 @@ export const MyCol = styled(Col)`
             border-right: none;
         }
     }
+    ${mediumPhone} {
+       h6 {
+           margin-left: 11px;
+       } 
+    }
+    &.col__search-history {
+        padding-top: 0.5rem;
+    }
+`;
+
+export const StyledHr = styled.hr`
+    margin: 0 0.5rem;
+    color: #dfe0df;
 `;
