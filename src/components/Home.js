@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { MyGrid, MyRow, MyCol, StyledHr } from './Home.styles';
-import SearchBar from './SearchBar';
-import VideoList from './VideoList';
-import SearchHistoryItem from './SearchHistoryItem';
-import { getYoutubeResult } from '../services/youtube';
-import syncWithLocalStorage from '../utils/localStorageUtils';
-import { updateFavorites, isVideoFavorite } from '../utils/favoritesUtils';
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { MyGrid, MyRow, MyCol } from "./Home.styles";
+import SearchBar from "./SearchBar";
+import VideoList from "./VideoList";
+import SearchHistoryItem from "./SearchHistoryItem";
+import HorizontalLine from "./HorizontalLine";
+import { getYoutubeResult } from "../services/youtube";
+import syncWithLocalStorage from "../utils/localStorageUtils";
+import { updateFavorites, isVideoFavorite } from "../utils/favoritesUtils";
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
@@ -24,8 +25,8 @@ const Home = () => {
     const newVideos = videos.map(video => {
       return {
         ...video,
-        isFavorite: isVideoFavorite(video, favorites)
-      }
+        isFavorite: isVideoFavorite(video, favorites),
+      };
     });
     setVideos(newVideos);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -40,48 +41,45 @@ const Home = () => {
 
   useEffect(() => localStorage.setItem("savedSearches", JSON.stringify(searchHistory)), [searchHistory]);
 
-  const repeatSearch = (searchString) => {
+  const repeatSearch = searchString => {
     setUserHasSearched(true);
     setInputSearchBar(searchString);
     setIsRepeatingSearch(true);
     setIsLoading(true);
-  }
+  };
 
   const updateVideoList = (searchText, mainVideoId) =>
-    getYoutubeResult(searchText, mainVideoId)
-      .then(response => {
-        let videoList = [];
-        if (userHasSearched) {
-          videoList = response.data.items;
-          if (!isRepeatingSearch) {
-            const newSearch = {
-              searchString: inputSearchBar,
-              timeStamp: Date.now(),
-              searchedVideos: videoList.slice(0, 2),
-            }
-            //future reminder: slice array to limit search results
-            const newSearchHistory = [...searchHistory];
-            newSearchHistory.unshift(newSearch);
-            setSearchHistory(newSearchHistory);
-          }
-        } else {
-          videoList = response.data.items.map(videoItem => ({
-            ...videoItem,
-            id: { videoId: videoItem.id }
-          })
-          );
+    getYoutubeResult(searchText, mainVideoId).then(response => {
+      let videoList = [];
+      if (userHasSearched) {
+        videoList = response.data.items;
+        if (!isRepeatingSearch) {
+          const newSearch = {
+            searchString: inputSearchBar,
+            timeStamp: Date.now(),
+            searchedVideos: videoList.slice(0, 2),
+          };
+          //future reminder: slice array to limit search results
+          const newSearchHistory = [...searchHistory];
+          newSearchHistory.unshift(newSearch);
+          setSearchHistory(newSearchHistory);
         }
-        const videoListWithFavorites = videoList.map(video => {
-          return {
-            ...video,
-            isFavorite: isVideoFavorite(video, favorites)
-          }
-        });
-        setVideos(videoListWithFavorites);
-        setIsLoading(false);
-        setIsRepeatingSearch(false);
+      } else {
+        videoList = response.data.items.map(videoItem => ({
+          ...videoItem,
+          id: { videoId: videoItem.id },
+        }));
       }
-      );
+      const videoListWithFavorites = videoList.map(video => {
+        return {
+          ...video,
+          isFavorite: isVideoFavorite(video, favorites),
+        };
+      });
+      setVideos(videoListWithFavorites);
+      setIsLoading(false);
+      setIsRepeatingSearch(false);
+    });
 
   const handleSearchSubmit = event => {
     event.preventDefault();
@@ -118,7 +116,7 @@ const Home = () => {
       </MyRow>
       <MyRow>
         <MyCol xs={12}>
-          {!isLoading &&
+          {!isLoading && (
             <VideoList
               loading={isLoading}
               videos={videos}
@@ -126,45 +124,54 @@ const Home = () => {
               onSelect={handleVideoSelect}
               header={userHasSearched ? "Search Results" : "Recommended Videos"}
               type="horizontal5"
-              className="horizontal5home" />
-          }
+              className="horizontal5home"
+            />
+          )}
         </MyCol>
       </MyRow>
-      <StyledHr className="hr"/>
+      <HorizontalLine />
       <MyRow>
         <MyCol xs={12} xl={6} className="col__search-history">
-          {searchHistory.length ?
-            !isLoading &&
-            <>
-              <h5>My recent searches</h5>
-              {searchHistory.map((historyEntry, i) =>
-                <SearchHistoryItem
-                  key={i}
-                  searchString={historyEntry.searchString}
-                  videos={historyEntry.searchedVideos}
-                  timeStamp={historyEntry.timeStamp}
-                  onClick={repeatSearch}
-                />)}
-            </> :
+          {searchHistory.length ? (
+            !isLoading && (
+              <>
+                <h5>My recent searches</h5>
+                {searchHistory.map((historyEntry, i) => (
+                  <SearchHistoryItem
+                    key={i}
+                    searchString={historyEntry.searchString}
+                    videos={historyEntry.searchedVideos}
+                    timeStamp={historyEntry.timeStamp}
+                    onClick={repeatSearch}
+                  />
+                ))}
+              </>
+            )
+          ) : (
             <h6>No recent searches found ¯\_(ツ)_/¯</h6>
-          }
+          )}
         </MyCol>
         <MyCol xs={12} xl={6} className="col__favorites">
-          {favorites.length ?
-            !isLoading &&
-            <VideoList
-              videos={favorites}
-              onSelect={handleVideoSelect}
-              onFavToggle={handleFavToggle}
-              header="My favorite videos"
-              type="favoritesHome"
-              className="favoritesHome" /> :
-            <div><h6>No favorites found ¯\_(ツ)_/¯</h6></div>
-          }
+          {favorites.length ? (
+            !isLoading && (
+              <VideoList
+                videos={favorites}
+                onSelect={handleVideoSelect}
+                onFavToggle={handleFavToggle}
+                header="My favorite videos"
+                type="favoritesHome"
+                className="favoritesHome"
+              />
+            )
+          ) : (
+            <div>
+              <h6>No favorites found ¯\_(ツ)_/¯</h6>
+            </div>
+          )}
         </MyCol>
       </MyRow>
     </MyGrid>
   );
-}
+};
 
 export default Home;
