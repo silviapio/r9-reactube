@@ -55,18 +55,17 @@ const SearchHistory = () => {
             {!recentlyViewed.length && !lastSearchedVideos.length ?
                 null :
                 <div>
-                    {recentlyViewed.length &&
+                    {recentlyViewed.length !== 0 &&
                         <VideoList
                             videos={recentlyViewed}
                             onSelect={handleVideoSelect}
                             onFavToggle={handleFavToggle}
                             header="My recently viewed videos"
-                            headerStyle="topHeader"
                             className="recentlyViewedHistoryPage"
                             type="horizontal5"
                         />
                     }
-                    {lastSearchedVideos.length &&
+                    {lastSearchedVideos.length !== 0 &&
                         <VideoList
                             videos={lastSearchedVideos}
                             onSelect={handleVideoSelect}

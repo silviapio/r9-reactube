@@ -22,9 +22,6 @@ export const MyCol = styled(Col)`
     padding: 1px;
     margin: 0;
     border: none;
-    h5 {
-        margin: 5px 5px 5px 10px;
-    }
     &.sidebarCol {
         border-right: 2px solid #dfe0df;
         ${mediumPhone} {

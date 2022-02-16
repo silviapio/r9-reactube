@@ -5,14 +5,6 @@ export const VideoListOuterContainer = styled.div`
     h4 {
         margin: 15px 5px 10px 5px;
     }
-    h5 {
-        margin: 5px 5px 5px 10px;
-    }
-    ${mediumPhone} {
-        h5 {
-            margin: 5px 5px 5px 12px;
-        }
-    }
     opacity: ${props => props.loading ? "0.2" : 1};
     &.recentlyViewedHistoryPage {
         border-bottom: 2px solid #dfe0df;
@@ -92,5 +84,8 @@ export const VideoListContainer = styled.div`
                 max-width: 190px;
             }
         }
+    }
+    &.recentlyViewedHistoryPage {
+        padding-left: 4px; 
     }
 `;

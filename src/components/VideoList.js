@@ -1,4 +1,5 @@
 import VideoItem from './VideoItem';
+import SectionTitle from './SectionTitle';
 import { VideoListContainer, VideoListOuterContainer } from './VideoList.styles';
 
 function VideoList({ onSelect, onFavToggle, header, videos, loading, type, headerStyle, className }) {
@@ -18,8 +19,8 @@ function VideoList({ onSelect, onFavToggle, header, videos, loading, type, heade
 
     return (
         <VideoListOuterContainer $loading={loading} className={className}>
-            { (headerStyle === "topHeader" || headerStyle === "lastSearchesHistoryPage") ? <h4>{header}</h4> :
-                <h5>{header}</h5>
+            { headerStyle === "topHeader" ? <h4>{header}</h4> :
+                <SectionTitle text={header} className={className}/>
             }
             <VideoListContainer className={className} type={type}>
                 {videosToDisplay.map(video =>
