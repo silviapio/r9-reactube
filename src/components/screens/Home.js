@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { MyGrid, MyRow, MyCol } from "./Home.styles";
-import SearchBar from "./SearchBar";
-import VideoList from "./VideoList";
-import SearchHistoryItem from "./SearchHistoryItem";
-import HorizontalLine from "./HorizontalLine";
-import { getYoutubeResult } from "../services/youtube";
-import syncWithLocalStorage from "../utils/localStorageUtils";
-import { updateFavorites, isVideoFavorite } from "../utils/favoritesUtils";
+import SearchBar from "../units/SearchBar";
+import VideoList from "../composed/VideoList";
+import SearchHistoryItem from "../units/SearchHistoryItem";
+import HorizontalLine from "../units/HorizontalLine";
+import { getYoutubeResult } from "../../services/youtube";
+import syncWithLocalStorage from "../../utils/localStorageUtils";
+import { updateFavorites, isVideoFavorite } from "../../utils/favoritesUtils";
 
 const Home = () => {
   const [videos, setVideos] = useState([]);

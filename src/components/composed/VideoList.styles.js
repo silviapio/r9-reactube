@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone, smallTablet } from "../utils/mediaQueries";
+import { mediumPhone, smallTablet } from "../../utils/mediaQueries";
 
 export const VideoListOuterContainer = styled.div`
   h4 {

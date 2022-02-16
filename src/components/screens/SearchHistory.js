@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import VideoList from "./VideoList";
-import HorizontalLine from "./HorizontalLine";
-import syncWithLocalStorage from "../utils/localStorageUtils";
-import { updateFavorites, isVideoFavorite } from "../utils/favoritesUtils";
+import VideoList from "../composed/VideoList";
+import HorizontalLine from "../units/HorizontalLine";
+import syncWithLocalStorage from "../../utils/localStorageUtils";
+import { updateFavorites, isVideoFavorite } from "../../utils/favoritesUtils";
 
 const SearchHistory = () => {
   const [recentlyViewed, setRecentlyViewed] = useState(syncWithLocalStorage("viewedVideos"));

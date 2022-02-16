@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone, smallTablet, mediumDesktop } from "../utils/mediaQueries";
+import { mediumPhone, smallTablet, mediumDesktop } from "../../utils/mediaQueries";
 
 export const VideoItemContainer = styled.div`
   padding: 4px;
