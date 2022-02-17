@@ -1,35 +1,44 @@
-import { Link } from "react-router-dom";
+import MenuItem from "../units/MenuItem";
 import { MenuDiv } from "./Menu.styles";
 import { HiOutlineHome, HiOutlineHeart, HiOutlineClock } from "react-icons/hi";
 
-const Menu = () => (
-  <MenuDiv>
-    <ul>
-      <Link to="/">
-        <li>
-          <div>
-            <HiOutlineHome />
-            <h5>Home</h5>
-          </div>
-        </li>
-      </Link>
-      <Link to="/favorites">
-        <li>
-          <div>
-            <HiOutlineHeart />
-            <h5>Favorites</h5>
-          </div>
-        </li>
-      </Link>
-      <Link to="/history">
-        <li>
-          <div>
-            <HiOutlineClock />
-            <h5>History</h5>
-          </div>
-        </li>
-      </Link>
-    </ul>
-  </MenuDiv>
-);
+function Menu() {
+  const menuData = [
+    {
+      text: "Home",
+      iconKey: 1,
+      path: "/",
+    },
+    {
+      text: "Favorites",
+      iconKey: 2,
+      path: "/favorites",
+    },
+    {
+      text: "History",
+      iconKey: 3,
+      path: "/history",
+    },
+  ];
+  const iconsMap = new Map([
+    [1, HiOutlineHome],
+    [2, HiOutlineHeart],
+    [3, HiOutlineClock],
+  ]);
+
+  const menuItems = menuData.map(({ text, iconKey, path }, i) => {
+    const icon = iconsMap.get(iconKey);
+    return (
+      <MenuItem key={i} text={text} path={path}>
+        {icon()}
+      </MenuItem>
+    );
+  });
+
+  return (
+    <MenuDiv>
+      <ul>{menuItems}</ul>
+    </MenuDiv>
+  );
+}
 export default Menu;

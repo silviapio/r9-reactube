@@ -27,7 +27,7 @@ export const MyCol = styled(Col)`
     color: var(--color-dark);
   }
   &.sidebarCol {
-    border-right: 2px solid #dfe0df;
+    border-right: 2px solid var(--color-rose);
     ${mediumPhone} {
       border-bottom: none;
       border-right: none;

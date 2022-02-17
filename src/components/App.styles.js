@@ -45,18 +45,10 @@ export const SidebarContainer = styled.div`
     div {
       display: flex;
       align-items: center;
-      h4 {
-        margin: 14px 0 14px 0;
-      }
     }
   }
   ${smallTablet} {
-    header {
-      font-size: 1rem;
-    }
-    li {
-      font-size: 0.9rem;
-    }
+    padding-top: 1rem;
   }
   ${mediumPhone} {
     flex-direction: row;
