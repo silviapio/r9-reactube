@@ -11,8 +11,7 @@ export const VideoItemContainer = styled.div`
   }
   :hover {
     cursor: pointer;
-    background-color: #d8e0df;
-    opacity: 0.9;
+    background-color: var(--color-gray-light-hover);
   }
   :last-child {
     margin-bottom: 0.3rem;
@@ -39,6 +38,10 @@ export const VideoItemContainer = styled.div`
   &.favoritesHome {
     max-width: 250px;
     padding: 0 4px;
+  }
+  &:focus {
+    outline: 1px solid var(--color-gray-dark);
+    background-color: var(--color-gray-light-hover);
   }
 `;
 

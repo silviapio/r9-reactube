@@ -2,7 +2,7 @@ import { VideoItemContainer, VideoTitleContainer, VideoOnlyContainer } from "./V
 import FavoriteToggler from "../units/FavoriteToggler";
 
 const VideoItem = ({ onSelect, snippet, title, onFavToggle, isFavorite, className }) => (
-  <VideoItemContainer onClick={onSelect} className={className}>
+  <VideoItemContainer onClick={onSelect} className={className} tabIndex="0">
     {className === "favoritesHome" ? (
       <VideoOnlyContainer>
         <img alt="video snippet" src={snippet} />

@@ -19,10 +19,10 @@ export const HistoryItemContainer = styled.div`
     height: 35px;
     :hover {
       cursor: pointer;
-      border: 1px solid #475569;
+      border: 1px solid var(--color-gray-dark);
     }
     :focus {
-      border: 1px solid #475569;
+      border: 1px solid var(--color-gray-dark);
       outline: none;
     }
   }

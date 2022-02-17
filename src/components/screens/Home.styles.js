@@ -23,6 +23,9 @@ export const MyCol = styled(Col)`
   padding: 1px;
   margin: 0;
   border: none;
+  h6 {
+    color: var(--color-dark);
+  }
   &.sidebarCol {
     border-right: 2px solid #dfe0df;
     ${mediumPhone} {
@@ -38,9 +41,4 @@ export const MyCol = styled(Col)`
   &.col__search-history {
     padding-top: 0.5rem;
   }
-`;
-
-export const StyledHr = styled.hr`
-  margin: 0 0.5rem;
-  color: #dfe0df;
 `;
