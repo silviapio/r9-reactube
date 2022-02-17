@@ -1,9 +1,9 @@
 import { VideoItemContainer, VideoTitleContainer, VideoOnlyContainer } from "./VideoItem.styles";
 import FavoriteToggler from "../units/FavoriteToggler";
 
-const VideoItem = ({ onSelect, snippet, title, onFavToggle, isFavorite, videoOnly }) => (
-  <VideoItemContainer onClick={onSelect} className={videoOnly ? "videoOnly" : null}>
-    {videoOnly ? (
+const VideoItem = ({ onSelect, snippet, title, onFavToggle, isFavorite, className }) => (
+  <VideoItemContainer onClick={onSelect} className={className}>
+    {className === "favoritesHome" ? (
       <VideoOnlyContainer>
         <img alt="video snippet" src={snippet} />
         <FavoriteToggler onFavToggle={onFavToggle} isFavorite={isFavorite} />

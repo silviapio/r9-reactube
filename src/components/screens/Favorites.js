@@ -23,7 +23,6 @@ const Favorites = () => {
       onSelect={handleVideoSelect}
       onFavToggle={handleFavRemoval}
       header="All my favorite videos"
-      type="favoritesPage"
       className="favoritesPage"
     />
   ) : (

@@ -36,7 +36,7 @@ export const VideoItemContainer = styled.div`
       max-width: 60%;
     }
   }
-  &.videoOnly {
+  &.favoritesHome {
     max-width: 250px;
     padding: 0 4px;
   }
@@ -44,11 +44,13 @@ export const VideoItemContainer = styled.div`
 
 export const VideoOnlyContainer = styled.div`
   position: relative;
+  padding: 5px;
+  border-radius: 5px;
   img {
     width: 100%;
     height: auto;
     vertical-align: middle;
-    padding: 5px;
+    border-radius: 5px;
   }
   span {
     position: absolute;

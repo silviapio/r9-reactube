@@ -124,7 +124,6 @@ const Home = () => {
               onFavToggle={handleFavToggle}
               onSelect={handleVideoSelect}
               header={userHasSearched ? "Search Results" : "Recommended Videos"}
-              type="horizontal5"
               className="horizontal5home"
             />
           )}
@@ -168,7 +167,6 @@ const Home = () => {
                 onSelect={handleVideoSelect}
                 onFavToggle={handleFavToggle}
                 header="My favorite videos"
-                type="favoritesHome"
                 className="favoritesHome"
               />
             )
