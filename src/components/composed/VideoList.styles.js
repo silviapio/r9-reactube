@@ -1,11 +1,17 @@
 import styled from "styled-components";
-import { mediumPhone, tablet, smallDesktop } from "../../utils/mediaQueries";
+import { mediumPhone, tablet, smallDesktop, desktop } from "../../utils/mediaQueries";
 
 export const VideoListOuterContainer = styled.div`
   h4 {
     margin: 15px 5px 10px 5px;
   }
   opacity: ${props => (props.loading ? "0.2" : 1)};
+  ${smallDesktop} {
+    padding-top: 0.7rem;
+  }
+  ${desktop} {
+    padding-top: 0.7rem;
+  }
 `;
 
 export const VideoListContainer = styled.div`
@@ -51,7 +57,7 @@ export const VideoListContainer = styled.div`
       max-width: 240px;
     }
   }
-  &.favoritesPage {
+  /* &.favoritesPage {
     flex-wrap: wrap;
     justify-content: center;
     img {
@@ -69,7 +75,10 @@ export const VideoListContainer = styled.div`
         max-width: 190px;
       }
     }
-  }
+    ${smallDesktop} {
+      min-width: 190px;
+    }
+  } */
   &.lastSearchesHistoryPage,
   &.recentlyViewedHistoryPage,
   &.favoritesPage {
@@ -89,6 +98,11 @@ export const VideoListContainer = styled.div`
     ${tablet} {
       img {
         max-width: 190px;
+      }
+    }
+    ${smallDesktop} {
+      img {
+        min-width: 90%;
       }
     }
   }
