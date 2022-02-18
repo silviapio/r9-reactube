@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone, smallTablet } from "../../utils/mediaQueries";
+import { mediumPhone, tablet, smallDesktop } from "../../utils/mediaQueries";
 
 export const VideoListOuterContainer = styled.div`
   h4 {
@@ -29,11 +29,18 @@ export const VideoListContainer = styled.div`
         max-width: 60%;
       }
     }
-    ${smallTablet} {
+    ${tablet} {
       flex-direction: row;
       flex-wrap: wrap;
       img {
         max-width: 190px;
+      }
+    }
+    ${smallDesktop} {
+      flex-direction: row;
+      flex-wrap: wrap;
+      img {
+        min-width: 190px;
       }
     }
   }
@@ -57,7 +64,7 @@ export const VideoListContainer = styled.div`
         max-width: 60%;
       }
     }
-    ${smallTablet} {
+    ${tablet} {
       img {
         max-width: 190px;
       }
@@ -79,7 +86,7 @@ export const VideoListContainer = styled.div`
         max-width: 60%;
       }
     }
-    ${smallTablet} {
+    ${tablet} {
       img {
         max-width: 190px;
       }

@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { smallTablet, mediumPhone } from "../utils/mediaQueries";
+import { tabletAndSmaller } from "../utils/mediaQueries";
 
 export const GlobalStyle = createGlobalStyle`
     body, html {
@@ -36,6 +36,7 @@ export const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  padding-top: 1rem;
   max-height: 100vh;
   a:hover,
   a:active {
@@ -47,10 +48,7 @@ export const SidebarContainer = styled.div`
       align-items: center;
     }
   }
-  ${smallTablet} {
-    padding-top: 1rem;
-  }
-  ${mediumPhone} {
+  ${tabletAndSmaller} {
     flex-direction: row;
     justify-content: space-between;
     max-height: 80px;

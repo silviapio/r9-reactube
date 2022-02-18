@@ -11,8 +11,8 @@ export const MyGrid = styled(Grid)`
   box-sizing: border-box;
 `;
 export const MyRow = styled(Row)`
+  min-height: 100%;
   padding: 1px;
-  //border-bottom: 2px solid #dfe0df;
   :first-child,
   :last-child {
     border: none;
@@ -27,7 +27,6 @@ export const MyCol = styled(Col)`
     color: var(--color-dark);
   }
   &.sidebarCol {
-    border-right: 2px solid var(--color-rose);
     ${mediumPhone} {
       border-bottom: none;
       border-right: none;

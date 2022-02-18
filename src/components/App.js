@@ -14,7 +14,7 @@ const App = () => (
     <GlobalStyle />
     <MyGrid fluid>
       <MyRow xs={12}>
-        <MyCol xs={12} sm={3} lg={2} className="sidebarCol">
+        <MyCol xs={12} md={3} lg={2} className="sidebarCol">
           <SidebarContainer>
             <Link to="/">
               <header>
@@ -27,7 +27,7 @@ const App = () => (
             <Menu />
           </SidebarContainer>
         </MyCol>
-        <MyCol xs={12} sm={9} lg={10}>
+        <MyCol xs={12} md={9} lg={10}>
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/videoDetail/:id" component={VideoDetailPage} />

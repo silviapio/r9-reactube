@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone } from "../../utils/mediaQueries";
+import { tabletAndSmaller } from "../../utils/mediaQueries";
 
 export const MenuDiv = styled.nav`
   margin-top: 0.9rem;
@@ -7,8 +7,7 @@ export const MenuDiv = styled.nav`
     list-style: none;
     padding: 0;
   }
-
-  ${mediumPhone} {
+  ${tabletAndSmaller} {
     margin-top: 0;
     a {
       margin-left: 10px;

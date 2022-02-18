@@ -1,25 +1,26 @@
 import styled from "styled-components";
-import { smallTablet, mediumPhone } from "../../utils/mediaQueries";
+import { mediumPhone, tablet, smallDesktop, desktop } from "../../utils/mediaQueries";
 
 export const InputContainer = styled.div`
-  max-width: 650px;
+  max-width: 740px;
   display: flex;
   justify-content: center;
-  padding-top: 14px;
+  padding: 18px 5px 0px 7px;
   input {
     width: 100%;
     padding-left: 3px;
-    min-height: 1.3rem;
+    height: 30px;
     border-radius: 5px;
-    border: 2px solid #dfe0df;
+    border: 1px solid var(--color-gray-dark);
     font-size: 0.7em;
     font-family: inherit;
-    font-weight: 300;
+    font-weight: 400;
     ::placeholder {
-      color: #dfe0df;
+      color: var(--collor-gray-light);
     }
     :focus {
-      outline: none;
+      outline: 1px solid var(--color-gray-dark);
+      box-shadow: 0 3px 10px rgb(30 41 59 / 0.2);
     }
   }
   ${mediumPhone} {
@@ -27,5 +28,15 @@ export const InputContainer = styled.div`
     input {
       margin: 0;
     }
+  }
+  ${tablet} {
+    padding: 0 11px;
+  }
+  ${smallDesktop} {
+    padding: 18px 5px 0px 10px;
+    margin: 0 auto;
+  }
+  ${desktop} {
+    padding: 18px 5px 0px 10px;
   }
 `;

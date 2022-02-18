@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone, smallTablet, mediumDesktop } from "../../utils/mediaQueries";
+import { mediumPhone, tablet, largeDesktop, smallDesktop } from "../../utils/mediaQueries";
 
 export const VideoItemContainer = styled.div`
   padding: 4px;
@@ -16,14 +16,17 @@ export const VideoItemContainer = styled.div`
   :last-child {
     margin-bottom: 0.3rem;
   }
-  ${mediumDesktop} {
+  ${largeDesktop} {
     flex-direction: column;
     align-items: center;
     img {
       max-width: 90%;
     }
   }
-  ${smallTablet} {
+  ${smallDesktop} {
+    min-width: 220px;
+  }
+  ${tablet} {
     max-width: 200px;
   }
   ${mediumPhone} {
@@ -42,6 +45,17 @@ export const VideoItemContainer = styled.div`
   &:focus {
     outline: 1px solid var(--color-gray-dark);
     background-color: var(--color-gray-light-hover);
+  }
+  &.video-item__inner-container {
+    ${smallDesktop} {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      img {
+        margin-left: 2px;
+      }
+    }
   }
 `;
 
@@ -73,7 +87,7 @@ export const VideoTitleContainer = styled.div`
   p {
     margin: 0;
   }
-  ${mediumDesktop} {
+  ${largeDesktop} {
     padding: 5px;
     font-size: 0.5em;
     p {

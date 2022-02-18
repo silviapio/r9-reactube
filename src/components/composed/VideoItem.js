@@ -9,7 +9,7 @@ const VideoItem = ({ onSelect, snippet, title, onFavToggle, isFavorite, classNam
         <FavoriteToggler onFavToggle={onFavToggle} isFavorite={isFavorite} />
       </VideoOnlyContainer>
     ) : (
-      <VideoItemContainer>
+      <VideoItemContainer className="video-item__inner-container">
         <img alt="video snippet" src={snippet} />
         <VideoTitleContainer>
           <FavoriteToggler onFavToggle={onFavToggle} isFavorite={isFavorite} />

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediumPhone } from "../../utils/mediaQueries";
+import { mediumPhone, tabletAndSmaller } from "../../utils/mediaQueries";
 
 export const MenuListItem = styled.li`
   padding: 5px 0;
@@ -18,7 +18,7 @@ export const MenuInnerContainer = styled.div`
 export const MenuHeading = styled.h2`
   margin: 0 0 0 4px;
   font-size: 1rem;
-  ${mediumPhone} {
+  ${tabletAndSmaller} {
     display: none;
   }
 `;
