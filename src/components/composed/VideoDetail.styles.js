@@ -1,11 +1,15 @@
 import styled from "styled-components";
-import { desktop } from "../../utils/mediaQueries";
+import { desktop, smallDesktop } from "../../utils/mediaQueries";
 
 export const VideoDetailContainer = styled.div`
   margin: 0 14px;
   padding-right: 0;
+  ${smallDesktop} {
+    margin-top: 1.1rem;
+  }
   ${desktop} {
     padding-right: 20px;
+    margin-top: 1.1rem;
   }
 `;
 
