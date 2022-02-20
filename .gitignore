@@ -24,6 +24,7 @@ yarn-error.log*
 
 # api keys
 privateKeys.js
+.env
 
 # local only
 toDo.md
