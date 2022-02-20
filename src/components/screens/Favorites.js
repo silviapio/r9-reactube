@@ -26,7 +26,7 @@ const Favorites = () => {
       className="favoritesPage"
     />
   ) : (
-    <SectionTitle text="No favorites found ¯\_(ツ)_/¯" className="favoritesPage" />
+    <SectionTitle text="Sorry, no favorites found ¯\_(ツ)_/¯" className="favoritesPage" />
   );
 };
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { MyGrid, MyRow, MyCol } from "./Home.styles";
+import { MyGrid, MyRow, MyCol, RecentSearchesContainer } from "./Home.styles";
 import SearchBar from "../units/SearchBar";
 import VideoList from "../composed/VideoList";
 import SearchHistoryItem from "../units/SearchHistoryItem";
@@ -134,7 +134,7 @@ const Home = () => {
         <MyCol xs={12} xl={6} className="col__search-history">
           {searchHistory.length ? (
             !isLoading && (
-              <>
+              <RecentSearchesContainer>
                 <SectionTitle text="My recent searches" className="home__recent-searches" />
                 {searchHistory.map((historyEntry, i) => (
                   <div key={i}>
@@ -153,10 +153,12 @@ const Home = () => {
                     />
                   </div>
                 ))}
-              </>
+              </RecentSearchesContainer>
             )
           ) : (
-            <h6>No recent searches found ¯\_(ツ)_/¯</h6>
+            <RecentSearchesContainer>
+              <SectionTitle text="No recent searches found ¯\_(ツ)_/¯" className="home__recent-searches__not-found" />
+            </RecentSearchesContainer>
           )}
         </MyCol>
         <MyCol xs={12} xl={6} className="col__favorites">
@@ -171,9 +173,7 @@ const Home = () => {
               />
             )
           ) : (
-            <div>
-              <h6>No favorites found ¯\_(ツ)_/¯</h6>
-            </div>
+            <SectionTitle text="No favorites found ¯\_(ツ)_/¯" className="home__favorites__not-found" />
           )}
         </MyCol>
       </MyRow>

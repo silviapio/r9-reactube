@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Grid, Row, Col } from "react-flexbox-grid";
-import { mediumPhone } from "../../utils/mediaQueries";
+import { mediumPhone, desktop } from "../../utils/mediaQueries";
 
 export const MyGrid = styled(Grid)`
   padding: 1px;
@@ -39,5 +39,11 @@ export const MyCol = styled(Col)`
   }
   &.col__search-history {
     padding-top: 0.5rem;
+  }
+`;
+
+export const RecentSearchesContainer = styled.div`
+  ${desktop} {
+    padding-top: 4px;
   }
 `;
