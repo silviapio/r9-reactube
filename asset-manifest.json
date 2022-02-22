@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/r9-reactube/static/css/main.4da0fa5c.css",
+    "main.js": "/r9-reactube/static/js/main.5a777a5d.js",
+    "static/js/787.5200f550.chunk.js": "/r9-reactube/static/js/787.5200f550.chunk.js",
+    "static/media/reactube.svg": "/r9-reactube/static/media/reactube.c148cd2351d563cd8f0c90013088ccd7.svg",
+    "index.html": "/r9-reactube/index.html",
+    "static/media/reactube-logo-camera.svg": "/r9-reactube/static/media/reactube-logo-camera.35b43e3ebdddabbc7636edd9c66f6abc.svg",
+    "main.4da0fa5c.css.map": "/r9-reactube/static/css/main.4da0fa5c.css.map",
+    "main.5a777a5d.js.map": "/r9-reactube/static/js/main.5a777a5d.js.map",
+    "787.5200f550.chunk.js.map": "/r9-reactube/static/js/787.5200f550.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4da0fa5c.css",
+    "static/js/main.5a777a5d.js"
+  ]
+}
