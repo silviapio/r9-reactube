@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import VideoList from "../composed/VideoList";
-import SectionTitle from "../units/SectionTitle";
+import NoContentFound from "../composed/NoContentFound";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
 import { updateFavorites } from "../../utils/favoritesUtils";
 
@@ -26,7 +26,7 @@ const Favorites = () => {
       className="favoritesPage"
     />
   ) : (
-    <SectionTitle text="Sorry, no favorites found ¯\_(ツ)_/¯" className="favoritesPage" />
+    <NoContentFound text="Sorry, no favorites found ¯\_(ツ)_/¯" titleClassName="favoritesPage__not-found" />
   );
 };
 

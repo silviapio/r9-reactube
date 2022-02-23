@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import VideoList from "../composed/VideoList";
 import HorizontalLine from "../units/HorizontalLine";
+import NoContentFound from "../composed/NoContentFound";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
 import { updateFavorites, isVideoFavorite } from "../../utils/favoritesUtils";
 
@@ -53,7 +54,9 @@ const SearchHistory = () => {
 
   return (
     <div>
-      {!recentlyViewed.length && !lastSearchedVideos.length ? null : (
+      {!recentlyViewed.length && !lastSearchedVideos.length ? (
+        <NoContentFound text="Sorry, no history found ¯\_(ツ)_/¯ " />
+      ) : (
         <div>
           {recentlyViewed.length !== 0 && (
             <>
