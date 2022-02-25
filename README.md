@@ -10,6 +10,8 @@
 
 ### ✨ Deployed/demo version [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
 
+##
+
 ## Install
 
 ```sh
@@ -26,7 +28,7 @@ To start the app in development mode:
 npm start
 ```
 
-## Navigate through branches
+### Navigate through branches
 
 There are many branches in this project, forgive me, it was my first complex solo project ƪ(ړײ)ƪ
 
