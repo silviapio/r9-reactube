@@ -6,6 +6,7 @@ import VideoList from "../composed/VideoList";
 import SearchHistoryItem from "../units/SearchHistoryItem";
 import SectionTitle from "../units/SectionTitle";
 import HorizontalLine from "../units/HorizontalLine";
+import Loader from "../units/Loader";
 import { getYoutubeResult } from "../../services/youtube";
 import syncWithLocalStorage from "../../utils/localStorageUtils";
 import { updateFavorites, isVideoFavorite } from "../../utils/favoritesUtils";
@@ -19,8 +20,11 @@ const Home = () => {
   const [searchHistory, setSearchHistory] = useState(syncWithLocalStorage("savedSearches"));
   const [isRepeatingSearch, setIsRepeatingSearch] = useState(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => updateVideoList(), []);
+  useEffect(() => {
+    setIsLoading(true);
+    updateVideoList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const newVideos = videos.map(video => {
@@ -78,7 +82,9 @@ const Home = () => {
         };
       });
       setVideos(videoListWithFavorites);
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1200);
       setIsRepeatingSearch(false);
     });
 
@@ -117,7 +123,7 @@ const Home = () => {
       </MyRow>
       <MyRow>
         <MyCol xs={12}>
-          {!isLoading && (
+          {!isLoading ? (
             <VideoList
               loading={isLoading}
               videos={videos}
@@ -126,6 +132,8 @@ const Home = () => {
               header={userHasSearched ? "Search Results" : "Recommended Videos"}
               className="horizontal5home"
             />
+          ) : (
+            <Loader />
           )}
         </MyCol>
       </MyRow>
