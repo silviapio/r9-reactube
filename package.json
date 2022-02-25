@@ -1,6 +1,14 @@
 {
-  "name": "r9-reactube",
-  "version": "0.1.0",
+  "name": "reactube",
+  "version": "1.1.0",
+  "description": "clone of some youtube functionalities made with React.js",
+  "author": "Silvia Piovesan",
+  "license": "CC0",
+  "homepage": "https://reactube-silvia.herokuapp.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silviapio/r9-reactube.git"
+  },
   "private": true,
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
