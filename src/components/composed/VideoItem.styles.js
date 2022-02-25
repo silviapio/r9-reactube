@@ -69,14 +69,22 @@ export const VideoOnlyContainer = styled.div`
     vertical-align: middle;
     border-radius: 5px;
   }
-  span {
+  button {
     position: absolute;
     top: 90%;
     left: 90%;
     transform: translate(-90%, -90%);
     -ms-transform: translate(-90%, -90%);
-    font-size: 0.9rem;
-    color: #d89fa4;
+    background-color: var(--color-gray-light);
+    padding: 0 4px;
+    border-radius: 10px;
+    &:hover {
+      background-color: var(--color-gray-light-hover);
+    }
+    svg {
+      max-width: 18px;
+      color: var(--color-rose);
+    }
   }
 `;
 
