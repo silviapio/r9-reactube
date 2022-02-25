@@ -2,7 +2,7 @@ import VideoItem from "./VideoItem";
 import SectionTitle from "../units/SectionTitle";
 import { VideoListContainer, VideoListOuterContainer } from "./VideoList.styles";
 
-function VideoList({ onSelect, onFavToggle, header, videos, loading, headerStyle, className }) {
+function VideoList({ onSelect, onFavToggle, header, videos, loading, className }) {
   const handleSelect = key => () => {
     onSelect(key);
   };
@@ -19,7 +19,7 @@ function VideoList({ onSelect, onFavToggle, header, videos, loading, headerStyle
 
   return (
     <VideoListOuterContainer $loading={loading} className={className}>
-      {headerStyle === "topHeader" ? <h4>{header}</h4> : <SectionTitle text={header} className={className} />}
+      <SectionTitle text={header} className={className} />
       <VideoListContainer className={className}>
         {videosToDisplay.map(video => (
           <VideoItem

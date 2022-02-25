@@ -76,7 +76,6 @@ const SearchHistory = () => {
               onSelect={handleVideoSelect}
               onFavToggle={handleFavToggle}
               header="My last search results"
-              headerStyle="lastSearchesHistoryPage"
               className="lastSearchesHistoryPage"
             />
           )}

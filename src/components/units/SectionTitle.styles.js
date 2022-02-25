@@ -15,8 +15,7 @@ export const TitleContainer = styled.div`
   }
   ${smallDesktop} {
     &.favoritesPage {
-      margin-top: 20px;
-      text-align: center;
+      text-align: left;
     }
   }
   ${desktop} {
@@ -24,8 +23,7 @@ export const TitleContainer = styled.div`
       margin-top: 20px;
     }
     &.favoritesPage {
-      margin-top: 20px;
-      text-align: center;
+      text-align: left;
     }
   }
 `;
