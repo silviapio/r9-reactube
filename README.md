@@ -10,15 +10,19 @@
 
 ### ✨ Deployed/demo version [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
 
-##
+## Demo overview/user guide
 
-## Install
+The web application consists of 3 main screens: Home, Favorites, History. These screens are accessible from anywhere in the app through the navbar (on the left on large screens, up on top on mobile). Plus, there's a 4th screen allowing to play a selected video.
+
+## Developer overview
+
+### Install
 
 ```sh
 npm install
 ```
 
-## Usage
+### Usage
 
 This project was bootstrapped with [Create React App](https://create-react-app.dev/)
 
@@ -27,6 +31,19 @@ To start the app in development mode:
 ```sh
 npm start
 ```
+
+### API keys
+
+The app consumes data from the YouTube API. If you fork/clone the repository, you will need your API key to use the app.
+
+Follow these steps:
+
+1. create an empty `.env` file in the root of the project
+2. save there your api key with this format: `REACT_APP_API_KEY = 12345xyz`, where "12345xyz" will be replaced by your own key
+
+If you don't modify it, `.gitignore` file already makes it so your `.env` file won't be tracked, but just be sure check that it lists ".env".
+
+You're good to go!
 
 ### Navigate through branches
 
