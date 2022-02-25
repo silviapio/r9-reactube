@@ -3,18 +3,28 @@
 This project was initially done as last assignment of the Front End path of the IT Academy Bootcamp.
 The goal was to build a simple clone of YouTube, allowing the user to favorite videos and to keep a record of the last videos that were displayed.
 
+## Demo
+
+> currently deployed version: 0.1.0 (draft)
+
+Visit a deployed version at [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
+
 ## Status
+
 Undergoing maintenance. Updates coming soon ƪ(ړײ)ƪ​​
 
 ## Navigate through branches
 
 ### main
+
 In main branch goes the latest stable version of the app.
 
 ### development
+
 In development branch there is the app "work in progress", with the latest working features successfully merged.
 
 ### dev/ branches
+
 All branches whose names start with "dev/" are working branches each for its own major feature.
 
 ### ex/ branches
