@@ -14,7 +14,21 @@
 
 The web application consists of 3 main screens: Home, Favorites, History. These screens are accessible from anywhere in the app through the navbar (on the left on large screens, up on top on mobile). Plus, there's a 4th screen allowing to play a selected video.
 
+Upon load, the app shows the recommended videos as provided by YouTube for the defined region (Spain).
+
+Possible actions:
+- perform a text search (search bar)
+- favorite videos
+- view recent searches and repeat them
+- view selected video
+
 ## Developer overview
+
+This project was bootstrapped with [Create React App](https://create-react-app.dev/).
+
+The routing is done with React Router v5.
+
+The app consumes data from the YouTube API.
 
 ### Install
 
@@ -23,8 +37,6 @@ npm install
 ```
 
 ### Usage
-
-This project was bootstrapped with [Create React App](https://create-react-app.dev/)
 
 To start the app in development mode:
 
@@ -47,11 +59,11 @@ You're good to go!
 
 ### Navigate through branches
 
-There are many branches in this project, forgive me, it was my first complex solo project ƪ(ړײ)ƪ
+There are many branches in this project, forgive me, it was my first complex solo project  ƪ(ړײ)ƪ
 
 - `main`
 
-In main branch goes the latest stable version of the app.
+In main branch goes the latest stable version of the app. **This is the correct version to fork/clone, should you wish to!**
 
 - `development`
 
