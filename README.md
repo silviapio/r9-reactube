@@ -5,12 +5,14 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/silviapio/r9-reactube/graphs/commit-activity)
 
 > This project was my first challenging project with React.js. I'm happy to say I built it without watching any tutorials!
+
 > It was submitted as last assignment of the Front End path of the IT Academy Bootcamp; there were 3 different levels of increasing difficulty, you can see them reflected in branches.
+
 > The goal was to build a clone of YouTube, allowing the user to favorite their videos and to keep a record of the last videos that were displayed.
 
 ### ✨ Deployed/demo version [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
 
-## Demo overview/user guide
+## Demo overview
 
 The web application consists of 3 main screens: Home, Favorites, History. These screens are accessible from anywhere in the app through the navbar (on the left on large screens, up on top on mobile). Plus, there's a 4th screen allowing to play a selected video.
 
@@ -28,6 +30,8 @@ Possible actions:
 
 ## Developer overview
 
+> Current status: I'm still working on this app, please see section [My personal to-do list](#my-personal-to-do-list-for-this-app) to see which improvements or change I'd like to make.
+
 This project was bootstrapped with [Create React App](https://create-react-app.dev/).
 
 The routing is done with React Router v5.
@@ -35,8 +39,6 @@ The routing is done with React Router v5.
 The app consumes data from the YouTube API.
 
 There is no backend, so data is saved locally thanks to Local Storage.
-
-> status: I'm still working on this app, please see section [My personal to-do list](#my-personal-to-do-list-for-this-app).
 
 ### Install
 
@@ -59,11 +61,9 @@ The app consumes data from the YouTube API. If you fork/clone the repository, yo
 Follow these steps:
 
 1. create an empty `.env` file in the root of the project
-2. save there your api key with this format: `REACT_APP_API_KEY = 12345xyz`, where "12345xyz" will be replaced by your own key
+2. save there your api key with this format: `REACT_APP_API_KEY = 12345xyz`, where "12345xyz" will be replaced by your own key. See `.env.sample` file as example
 
-If you don't modify it, `.gitignore` file already makes it so your `.env` file won't be tracked, but just be sure check that it lists ".env".
-
-You're good to go!
+Currently, `.gitignore` file already makes it so your `.env` file won't be tracked, but just to be sure, check that it lists ".env". OK, you're good to go!
 
 ### Navigate through branches
 
@@ -71,7 +71,7 @@ There are many branches in this project, forgive me, it was my first complex sol
 
 - `main`
 
-In main branch goes the latest stable version of the app. **This is the correct version to fork/clone, should you wish to!**
+In main branch goes the latest stable version of the app. **This is the most suitable version to fork/clone, should you wish to!**
 
 - `development`
 
