@@ -28,3 +28,6 @@ privateKeys.js
 
 # local only
 toDo.md
+
+# Local Netlify folder
+.netlify

@@ -4,7 +4,7 @@
   "description": "clone of some youtube functionalities made with React.js",
   "author": "Silvia Piovesan",
   "license": "CC0",
-  "homepage": "https://reactube-silvia.herokuapp.com/",
+  "homepage": "",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/silviapio/r9-reactube.git"

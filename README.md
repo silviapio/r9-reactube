@@ -10,7 +10,7 @@
 
 > The goal was to build a clone of YouTube, allowing the user to favorite their videos and to keep a record of the last videos that were displayed.
 
-### ✨ Deployed/demo version [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
+### ✨ Deployed/demo version [https://reactube-silvia.netlify.app/](https://reactube-silvia.netlify.app/)
 
 ## Demo overview
 
