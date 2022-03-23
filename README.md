@@ -1,6 +1,6 @@
 # Welcome to Reactube 👋
 
-![Version](https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-1.2.0-blue.svg?cacheSeconds=2592000)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/silviapio/r9-reactube#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/silviapio/r9-reactube/graphs/commit-activity)
 
@@ -10,7 +10,7 @@
 
 > The goal was to build a clone of YouTube, allowing the user to favorite their videos and to keep a record of the last videos that were displayed.
 
-### ✨ Deployed/demo version [https://reactube-silvia.herokuapp.com/](https://reactube-silvia.herokuapp.com/)
+### ✨ Deployed/demo version [https://reactube-silvia.netlify.app/](https://reactube-silvia.netlify.app/)
 
 ## Demo overview
 

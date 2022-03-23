@@ -82,9 +82,7 @@ const Home = () => {
         };
       });
       setVideos(videoListWithFavorites);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1200);
+      setIsLoading(false);
       setIsRepeatingSearch(false);
     });
 
